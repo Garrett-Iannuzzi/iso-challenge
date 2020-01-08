@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
 import './App.scss';
 
 class App extends Component {
@@ -9,6 +10,7 @@ class App extends Component {
   render() {
     return (
       <main>
+        <Nav />
       </main>
     );
   }
