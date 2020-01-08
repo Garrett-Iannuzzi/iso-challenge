@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.scss';
 
-function App() {
-  return (
-    <h1>Hi!</h1>
-  );
+class App extends Component {
+  constructor() {
+    super()
+  }
+
+  render() {
+    return (
+      <main>
+      </main>
+    );
+  }
 }
 
 export default App;
