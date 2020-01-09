@@ -13,9 +13,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const all = getPlayers()
-      .then(res => this.setState({ players: res }))
-    console.log('all', all)  
+    getPlayers(1)
+      .then(res => this.setState({ players: res.data }))
   }
 
   render() {
