@@ -17,14 +17,14 @@ export class HomeContainer extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  // handleStartError = () => {
-  //     const { teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
-  //     if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
+  handleStartError = () => {
+      const { teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
+      if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
 
-  //     } else {
+      } else {
 
-  //     }
-  // }
+      }
+  }
 
 
   render() {
