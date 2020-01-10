@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav';
 import { Route } from 'react-router-dom';
 import { getPlayers, getStats } from '../../apiCalls';
 import './App.scss';
+import { HomeContainer } from '../../Containers/HomeContainer/HomeContainer';
 
 class App extends Component {
   constructor() {
@@ -23,12 +24,15 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <Route path='/' render={() => 
-          <Nav /> 
+      <body>
+          <Route path='/' render={() => 
+        <main>
+            <Nav />
+            <HomeContainer />
+        </main>
           }
-        />
-      </main>
+          />
+      </body>
     );
   }
 }
