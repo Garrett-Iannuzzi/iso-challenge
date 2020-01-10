@@ -6,4 +6,14 @@ export const getPlayers = (pageNumber) => {
     }
     return res.json()
   })
-}
+} 
+
+export const getStats = () => {
+  return fetch('https://www.balldontlie.io/api/v1/stats')
+  .then(res => {
+    if(!res.ok) {
+      throw Error('Error fetching stats')
+    }
+    return res.json()
+  })
+} 
