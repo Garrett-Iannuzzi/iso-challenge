@@ -1,0 +1,13 @@
+article {
+  border: solid 3px black;
+  height: 22em;
+  margin: 10em;
+  text-align: center;
+  width: 50%;
+  &>ul {
+    list-style-type: none;
+    &>li {
+      margin: 1em;
+    }
+  }
+}

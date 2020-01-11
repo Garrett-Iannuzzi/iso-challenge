@@ -41,9 +41,6 @@ class App extends Component {
           </main>
           }
         />
-        {/* <Route path='/home' render={() => 
-        }>
-        </Route> */}
       </body>
     );
   }
