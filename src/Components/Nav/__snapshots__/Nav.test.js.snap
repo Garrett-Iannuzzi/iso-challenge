@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Nav Component should match the snapshot 1`] = `
+<div>
+  <nav>
+    <h1>
+      NBA Iso-Challenge
+    </h1>
+    <Link
+      to="/rules"
+    >
+      <button>
+        Rules Expert
+      </button>
+    </Link>
+    <Link
+      to="/"
+    >
+      <button>
+        Home
+      </button>
+    </Link>
+  </nav>
+</div>
+`;

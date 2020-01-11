@@ -21,7 +21,6 @@ export class App extends Component {
     getStats()
     .then(res => this.props.statsInfo(res.data))
     .catch(err => console.log(err))
-    console.log(this.props.statsInfo)
   }
 
   render() {
