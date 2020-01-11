@@ -1,7 +1,7 @@
 import React from 'react';
 import { App, mapDispatchToProps } from './App';
 import { shallow } from 'enzyme';
-import { getPlayerInfo } from '../../actions/actions';
+import { getPlayerInfo, getStatsInfo } from '../../actions/actions';
 
 describe('App', () => {
 
@@ -66,7 +66,7 @@ describe('App', () => {
       mappedProps.playerInfo(mockPlayerData);
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    })
+    });
   });
 
 })
