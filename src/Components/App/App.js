@@ -3,23 +3,24 @@ import Nav from '../Nav/Nav';
 import { Route } from 'react-router-dom';
 import { getPlayers, getStats } from '../../apiCalls';
 import './App.scss';
+import { connect } from 'react-redux';
+import { getPlayerInfo } from '../../actions/actions';
 import HomeContainer from '../../Containers/HomeContainer/HomeContainer';
 import Rules from '../../Components/Rules/Rules';
 import GameContainer from '../../Containers/GameContainer/GameContainer';
 
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super()
     this.state = {
-      players: [],
       stats: []
     }
   }
 
   componentDidMount() {
     getPlayers(1)
-      .then(res => this.setState({ players: res.data }))
+      .then(res => this.props.playerInfo(res.data))
     getStats()
       .then(res => this.setState({ stats: res.data }))
       .catch(err => console.log(err))
@@ -54,4 +55,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  playerInfo: players => dispatch(getPlayerInfo(players))
+})
+
+export default connect(null, mapDispatchToProps)(App)

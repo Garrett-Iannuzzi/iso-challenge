@@ -3,3 +3,8 @@ export const getTeamsInfo = (teamOne, teamTwo) => ({
   teamOne,
   teamTwo
 });
+
+export const getPlayerInfo = (playerInfo) => ({
+  type: 'GET_PLAYERS',
+  playerInfo
+});
