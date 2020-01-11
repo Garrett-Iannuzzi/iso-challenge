@@ -1,7 +1,7 @@
 import React from 'react';
-import { HomeContainer } from './HomeContainer';
+import { HomeContainer, mapDispatchToProps } from './HomeContainer';
 import { shallow } from 'enzyme';
-import { teamInfo } from '../../actions/actions';
+import { teamInfo, getTeamsInfo } from '../../actions/actions';
 import { mapDispatch } from '../HomeContainer/HomeContainer';
 
 describe('HomeContainer', () => {
@@ -63,6 +63,19 @@ describe('HomeContainer', () => {
 
       expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockEvent)
     });
+  });
+
+  describe('mapDispatchToProps', () => {
+
+    it('Should call mapDispatchToProps with correct team info when handleStartError is called', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = getTeamsInfo({ teamInfo: [{ teamOneName: 'G-Swish', skillLevelOne: 'NBA' }, { teamTwoName: 'D-Buckets', skillLevelTwo: 'NBA' }] });
+
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.teamInfo({ teamInfo: [{ teamOneName: 'G-Swish', skillLevelOne: 'NBA' }, { teamTwoName: 'D-Buckets', skillLevelTwo: 'NBA' }] });
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    })
   });
 
 })
