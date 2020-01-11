@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { getPlayers, getStats } from '../../apiCalls';
 import './App.scss';
 import HomeContainer from '../../Containers/HomeContainer/HomeContainer';
+import Rules from '../../Components/Rules/Rules';
 
 
 class App extends Component {
@@ -26,13 +27,23 @@ class App extends Component {
   render() {
     return (
       <body>
-          <Route path='/' render={() => 
-        <main>
+        <Route exact path='/' render={() => 
+          <main>
             <Nav />
             <HomeContainer />
-        </main>
+          </main>
           }
           />
+        <Route path='/rules' render={() =>
+          <main>
+            <Nav />
+            <Rules />
+          </main>
+          }
+        />
+        {/* <Route path='/home' render={() => 
+        }>
+        </Route> */}
       </body>
     );
   }
