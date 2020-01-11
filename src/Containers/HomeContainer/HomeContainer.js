@@ -42,6 +42,7 @@ export class HomeContainer extends Component {
           <label for='teamOneName'>Team 1 Name</label>
           <input
             name='teamOneName'
+            className='input-team-one'
             value={this.state.teamOneName}
             placeholder='Enter Team Name'
             type='text'
@@ -53,7 +54,7 @@ export class HomeContainer extends Component {
             id='skillLevelOne'
             value={this.state.skillLevelOne}
             name='skillLevelOne'
-            className='input-skillLevelOne'
+            className='select-skill-one'
             onChange={ (e) => this.handleChange(e) }
           >
             <option value='And-1'>And-1</option>
@@ -65,6 +66,7 @@ export class HomeContainer extends Component {
           <label for='teamNameTwo'>Team 2 Name</label>
           <input
             name='teamTwoName'
+            className='input-team-two'
             value={this.state.teamTwoName}
             placeholder='Enter Team Name'
             type='text'
@@ -76,7 +78,7 @@ export class HomeContainer extends Component {
             id='skillLevelTwo'
             value={this.state.skillLevelTwo}
             name='skillLevelTwo'
-            className='input-skillLevelTwo'
+            className='select-skill-two'
             onChange={ (e) => this.handleChange(e) }
           >
             <option value='And-1'>And-1</option>
