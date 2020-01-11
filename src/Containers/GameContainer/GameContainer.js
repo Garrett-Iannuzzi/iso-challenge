@@ -7,7 +7,7 @@ const GameContainer = (props) => {
 
   const { playerInfo, teamInfo } = props;
 
-  const doIt = (position) => {
+  const displayLabel = (position) => {
     return(
       <>
         <label>{position}:</label>
@@ -18,12 +18,17 @@ const GameContainer = (props) => {
   const getPlayersByPosition = (position) => {
     const filteredPlayers = playerInfo.filter(player => player.position === position);
     const filteredNames = filteredPlayers.reduce((fullName, currentPlayer) => {
-      fullName += currentPlayer.first_name + ' ' + currentPlayer.last_name
+      fullName.push(currentPlayer.first_name + ' ' + currentPlayer.last_name)
       return fullName
-    }, '')
+    }, []);
+    const individualPlayerName = filteredNames.map(name => {
+      return(
+        <option>{name}</option>
+      )
+    });
     return (
       <select>
-        <option>{filteredNames}</option>
+        {individualPlayerName}
       </select>
     )
   }
@@ -44,37 +49,38 @@ const GameContainer = (props) => {
         <section className='section-team'>
           <h2>{getTeamMetric(1, 'teamOneName')}</h2>
           <h4>{getTeamMetric(1, 'skillLevelOne')}</h4>
-            {doIt('Center')}
+            {displayLabel('Center')}
             {getPlayersByPosition('C')}
 
-            {doIt('Guard')}
+            {displayLabel('Guard')}
             {getPlayersByPosition('G')}
 
-            {doIt('Guard')}
+            {displayLabel('Guard')}
             {getPlayersByPosition('G')}
 
-            {doIt('Forward')}
+            {displayLabel('Forward')}
             {getPlayersByPosition('F')}
 
-            {doIt('Forward')}
+            {displayLabel('Forward')}
             {getPlayersByPosition('F')}
         </section>
+
         <section className='section-team'>
           <h2>{getTeamMetric(2, 'teamTwoName')}</h2>
           <h4>{getTeamMetric(2, 'skillLevelTwo')}</h4>
-            {doIt('Center')}
+            {displayLabel('Center')}
             {getPlayersByPosition('C')}
 
-            {doIt('Guard')}
+            {displayLabel('Guard')}
             {getPlayersByPosition('G')}
 
-            {doIt('Guard')}
+            {displayLabel('Guard')}
             {getPlayersByPosition('G')}
 
-            {doIt('Forward')}
+            {displayLabel('Forward')}
             {getPlayersByPosition('F')}
 
-            {doIt('Forward')}
+            {displayLabel('Forward')}
             {getPlayersByPosition('F')}
         </section>
       </div>

@@ -26,7 +26,6 @@ export class HomeContainer extends Component {
     this.props.teamInfo(teamOne, teamTwo)
     
 
-      // const { teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
       // if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
 
       // } else {
