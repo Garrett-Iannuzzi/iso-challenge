@@ -5,6 +5,7 @@ import { getPlayers, getStats } from '../../apiCalls';
 import './App.scss';
 import HomeContainer from '../../Containers/HomeContainer/HomeContainer';
 import Rules from '../../Components/Rules/Rules';
+import GameContainer from '../../Containers/GameContainer/GameContainer';
 
 
 class App extends Component {
@@ -38,6 +39,13 @@ class App extends Component {
           <main>
             <Nav />
             <Rules />
+          </main>
+          }
+        />
+        <Route path='/game' render={() =>
+          <main>
+            <Nav />
+            <GameContainer />
           </main>
           }
         />

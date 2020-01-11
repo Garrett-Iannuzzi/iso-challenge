@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './HomeContainer.scss';
 import { connect } from 'react-redux';
 import { getTeamsInfo } from '../../actions/actions';
+import { Link } from 'react-router-dom';
 
 export class HomeContainer extends Component {
   constructor(props) {
@@ -83,7 +84,9 @@ export class HomeContainer extends Component {
             <option value='NBA'>NBA</option>
           </select>
         </form>
-        <button className='btn-start' type='button' onClick={ () => this.handleStartError() }>Start The Game</button>
+        <Link to='/game'>
+          <button className='btn-start' type='button' onClick={ () => this.handleStartError() }>Start The Game</button>
+        </Link>
       </div>
     )
   }
