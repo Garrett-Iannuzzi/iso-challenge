@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './HomeContainer.scss';
-
+import { connect } from 'react-redux';
+import { getTeamsInfo } from '../../actions/actions';
 
 export class HomeContainer extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state ={
       teamOneName: '',
       teamTwoName: '',
@@ -17,14 +18,20 @@ export class HomeContainer extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  // handleStartError = () => {
-  //     const { teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
-  //     if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
+  handleStartError = () => {
+    const {teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state
+    const teamOne = { teamOneName, skillLevelOne };
+    const teamTwo = { teamTwoName, skillLevelTwo }
+    this.props.teamInfo(teamOne, teamTwo)
+    
 
-  //     } else {
+      // const { teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
+      // if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
 
-  //     }
-  // }
+      // } else {
+
+      // }
+  }
 
 
   render() {
@@ -81,3 +88,9 @@ export class HomeContainer extends Component {
     )
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  teamInfo: (teamOne, teamTwo) => dispatch(getTeamsInfo(teamOne, teamTwo))
+})
+
+export default connect(null, mapDispatchToProps)(HomeContainer)
