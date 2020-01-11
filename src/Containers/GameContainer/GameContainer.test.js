@@ -1,15 +1,15 @@
 import React from 'react';
-import Nav from './Nav';
+import GameContainer from './GameContainer';
 import { shallow } from 'enzyme';
 
-describe('Nav', () => {
+describe('GameContainer', () => {
 
   let wrapper
 
-  describe('Nav Component', () => {
+  describe('gameContainer Component', () => {
 
     beforeEach(() => {
-      wrapper = shallow(<Nav />)
+      wrapper = shallow(<GameContainer />)
     });
 
     it('should match the snapshot', () => {

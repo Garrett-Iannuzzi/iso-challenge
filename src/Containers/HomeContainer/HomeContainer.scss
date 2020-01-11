@@ -1,0 +1,23 @@
+form {
+  border: solid 3px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 12em;
+  margin: 3em;
+  width: 50%;
+}
+
+label {
+  margin: 1em;
+}
+
+input {
+  margin: 1em;
+  width: 40%;
+}
+
+select {
+  margin: 1em;
+  width: 40%;
+}

@@ -1,0 +1,19 @@
+.game-container {
+  display: flex;
+}
+
+.section-team {
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 38em;
+  margin: 3em;
+  width: 40%;
+  &>h2 {
+    text-align: center;
+  }
+  &>h4 {
+    text-align: center;
+  }
+}

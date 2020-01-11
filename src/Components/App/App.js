@@ -3,38 +3,58 @@ import Nav from '../Nav/Nav';
 import { Route } from 'react-router-dom';
 import { getPlayers, getStats } from '../../apiCalls';
 import './App.scss';
-import { HomeContainer } from '../../Containers/HomeContainer/HomeContainer';
+import { connect } from 'react-redux';
+import { getPlayerInfo, getStatsInfo } from '../../actions/actions';
+import HomeContainer from '../../Containers/HomeContainer/HomeContainer';
+import Rules from '../../Components/Rules/Rules';
+import GameContainer from '../../Containers/GameContainer/GameContainer';
 
-class App extends Component {
+
+export class App extends Component {
   constructor() {
     super()
-    this.state = {
-      players: [],
-      stats: []
-    }
   }
 
   componentDidMount() {
     getPlayers(1)
-      .then(res => this.setState({ players: res.data }))
+    .then(res => this.props.playerInfo(res.data))
     getStats()
-      .then(res => this.setState({ stats: res.data }))
-      .catch(err => console.log(err))
+    .then(res => this.props.statsInfo(res.data))
+    .catch(err => console.log(err))
   }
 
   render() {
     return (
       <body>
-          <Route path='/' render={() => 
-        <main>
+        <Route exact path='/' render={() => 
+          <main>
             <Nav />
             <HomeContainer />
-        </main>
+          </main>
           }
           />
+        <Route path='/rules' render={() =>
+          <main>
+            <Nav />
+            <Rules />
+          </main>
+          }
+        />
+        <Route path='/game' render={() =>
+          <main>
+            <Nav />
+            <GameContainer />
+          </main>
+          }
+        />
       </body>
     );
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => ({
+  playerInfo: players => dispatch(getPlayerInfo(players)),
+  statsInfo: stats => dispatch(getStatsInfo(stats))
+})
+
+export default connect(null, mapDispatchToProps)(App)

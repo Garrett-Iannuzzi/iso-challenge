@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeContainer homeContainer Component should match the snapshot 1`] = `
+<div>
+  <form>
+    <label
+      for="teamOneName"
+    >
+      Team 1 Name
+    </label>
+    <input
+      className="input-team-one"
+      maxLength="25"
+      name="teamOneName"
+      onChange={[Function]}
+      placeholder="Enter Team Name"
+      type="text"
+      value=""
+    />
+    <label
+      for="skillLevelOne"
+    >
+      Select Level
+    </label>
+    <select
+      className="select-skill-one"
+      id="skillLevelOne"
+      name="skillLevelOne"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value="And-1"
+      >
+        And-1
+      </option>
+      <option
+        value="D League"
+      >
+        D League
+      </option>
+      <option
+        value=""
+      >
+        NBA
+      </option>
+    </select>
+  </form>
+  <form>
+    <label
+      for="teamNameTwo"
+    >
+      Team 2 Name
+    </label>
+    <input
+      className="input-team-two"
+      maxLength="25"
+      name="teamTwoName"
+      onChange={[Function]}
+      placeholder="Enter Team Name"
+      type="text"
+      value=""
+    />
+    <label
+      for="skillLevelTwo"
+    >
+      Select Level
+    </label>
+    <select
+      className="select-skill-two"
+      id="skillLevelTwo"
+      name="skillLevelTwo"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        value="And-1"
+      >
+        And-1
+      </option>
+      <option
+        value="D League"
+      >
+        D League
+      </option>
+      <option
+        value="NBA"
+      >
+        NBA
+      </option>
+    </select>
+  </form>
+  <Link
+    to="/game"
+  >
+    <button
+      className="btn-start"
+      onClick={[Function]}
+      type="button"
+    >
+      Start The Game
+    </button>
+  </Link>
+</div>
+`;
