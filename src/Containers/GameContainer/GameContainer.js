@@ -89,9 +89,9 @@ const GameContainer = (props) => {
   )
 }
 
-export const mapState = state => ({
+export const mapStateToProps = state => ({
   playerInfo: state.playerInfo,
   teamInfo: state.teamInfo
 })
 
-export default connect(mapState)(GameContainer)
+export default connect(mapStateToProps)(GameContainer)

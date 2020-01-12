@@ -2,7 +2,6 @@ import React from 'react';
 import { HomeContainer, mapDispatchToProps } from './HomeContainer';
 import { shallow } from 'enzyme';
 import { teamInfo, getTeamsInfo } from '../../actions/actions';
-import { mapDispatch } from '../HomeContainer/HomeContainer';
 
 describe('HomeContainer', () => {
 
