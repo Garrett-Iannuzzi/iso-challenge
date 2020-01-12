@@ -28,8 +28,8 @@ export class HomeContainer extends Component {
 
   submitTeams = () => {
     const {teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
-    const teamOne = { teamOneName, skillLevelOne };
-    const teamTwo = { teamTwoName, skillLevelTwo };
+    const teamOne = { teamOneName, skillLevelOne, players: [] };
+    const teamTwo = { teamTwoName, skillLevelTwo, players: [] };
     this.props.teamInfo(teamOne, teamTwo)
   }
   

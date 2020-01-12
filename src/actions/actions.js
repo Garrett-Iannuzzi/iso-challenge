@@ -18,3 +18,10 @@ export const isLoggedIn = (isLoggedIn) => ({
   type: 'GET_LOGIN',
   isLoggedIn: isLoggedIn
 })
+
+export const selectPlayer = (player, team, index) => ({
+  type: 'SELECT_PLAYER',
+  player,
+  team,
+  index
+})

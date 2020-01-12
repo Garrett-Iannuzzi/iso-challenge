@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import { Route } from 'react-router-dom';
-import { getPlayers, getStats } from '../../apiCalls';
+import { getPlayers, getStats, getNextPlayerPage } from '../../apiCalls';
 import './App.scss';
 import { connect } from 'react-redux';
 import { getPlayerInfo, getStatsInfo } from '../../actions/actions';
@@ -12,9 +12,12 @@ import GameContainer from '../../Containers/GameContainer/GameContainer';
 
 export class App extends Component {
 
-  componentDidMount() {
-    getPlayers(1)
-    .then(res => this.props.playerInfo(res.data))
+  async componentDidMount() {
+    await getPlayers(1)
+    .then(res => {
+      this.props.playerInfo(res.data)
+      getNextPlayerPage(res, this.props.playerInfo)
+    })
     getStats()
     .then(res => this.props.statsInfo(res.data))
     .catch(err => console.log(err))
@@ -26,7 +29,7 @@ export class App extends Component {
         <Route exact path='/' render={({ history }) => 
           <main>
             <Nav />
-            <HomeContainer history={history} />
+            <HomeContainer history={ history } />
           </main>
           }
           />

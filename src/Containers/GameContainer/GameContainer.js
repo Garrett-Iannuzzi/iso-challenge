@@ -1,6 +1,7 @@
 import React from 'react';
 import './GameContainer.scss';
 import { connect } from 'react-redux';
+import PlayerSelect from '../../Components/PlayerSelect/PlayerSelect';
 
 
 const GameContainer = (props) => {
@@ -15,11 +16,11 @@ const GameContainer = (props) => {
     )
   }
 
-  const getPlayersByPosition = (position) => {
-    const filteredPlayers = playerInfo.filter(player => player.position === position);
+  const getPlayersByPosition = (position, team, index) => {
+    const filteredPlayers = playerInfo.filter(player => player.position === position || !player.position);
     const filteredNames = filteredPlayers.reduce((fullName, currentPlayer) => {
-      fullName.push(currentPlayer.first_name + ' ' + currentPlayer.last_name)
-      return fullName
+      fullName.push(currentPlayer.last_name + ', ' + currentPlayer.first_name)
+      return fullName.sort()
     }, []);
     const individualPlayerName = filteredNames.map(name => {
       return(
@@ -27,9 +28,11 @@ const GameContainer = (props) => {
       )
     });
     return (
-      <select>
-        {individualPlayerName}
-      </select>
+      <PlayerSelect 
+        players={individualPlayerName}
+        index={index}
+        team={team} 
+      />
     )
   }
 
@@ -50,38 +53,38 @@ const GameContainer = (props) => {
           <h2>{getTeamMetric(1, 'teamOneName')}</h2>
           <h4>{getTeamMetric(1, 'skillLevelOne')}</h4>
             {displayLabel('Center')}
-            {getPlayersByPosition('C')}
+            {getPlayersByPosition('C', 'teamOne', 0)}
 
             {displayLabel('Guard')}
-            {getPlayersByPosition('G')}
+            {getPlayersByPosition('G', 'teamOne', 1)}
 
             {displayLabel('Guard')}
-            {getPlayersByPosition('G')}
+            {getPlayersByPosition('G', 'teamOne', 2)}
 
             {displayLabel('Forward')}
-            {getPlayersByPosition('F')}
+            {getPlayersByPosition('F', 'teamOne', 3)}
 
             {displayLabel('Forward')}
-            {getPlayersByPosition('F')}
+            {getPlayersByPosition('F', 'teamOne', 4)}
         </section>
 
         <section className='section-team'>
           <h2>{getTeamMetric(2, 'teamTwoName')}</h2>
           <h4>{getTeamMetric(2, 'skillLevelTwo')}</h4>
             {displayLabel('Center')}
-            {getPlayersByPosition('C')}
+            {getPlayersByPosition('C', 'teamTwo', 0)}
 
             {displayLabel('Guard')}
-            {getPlayersByPosition('G')}
+            {getPlayersByPosition('G', 'teamTwo', 1)}
 
             {displayLabel('Guard')}
-            {getPlayersByPosition('G')}
+            {getPlayersByPosition('G', 'teamTwo', 2)}
 
             {displayLabel('Forward')}
-            {getPlayersByPosition('F')}
+            {getPlayersByPosition('F', 'teamTwo', 3)}
 
             {displayLabel('Forward')}
-            {getPlayersByPosition('F')}
+            {getPlayersByPosition('F', 'teamTwo', 4)}
         </section>
       </div>
       <button className='btn-stats'>Get Stats</button>
