@@ -1,4 +1,5 @@
 import * as actions from './actions';
+import { stat } from 'fs';
 
 describe('Actions', () => {
 
@@ -60,6 +61,18 @@ describe('Actions', () => {
     const mockExpectedAction = {
       type: 'GET_PLAYERS',
       playerInfo: players
+    } 
+
+    expect(result).toEqual(mockExpectedAction);
+  });
+
+  it('Should have a type of GET_LOGIN', () => {
+    const status = false;
+
+    const result = actions.isLoggedIn(status);
+    const mockExpectedAction = {
+      type: 'GET_LOGIN',
+      isLoggedIn: false
     } 
 
     expect(result).toEqual(mockExpectedAction);

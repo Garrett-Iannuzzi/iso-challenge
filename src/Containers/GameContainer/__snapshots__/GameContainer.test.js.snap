@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GameContainer gameContainer Component should match the snapshot 1`] = `undefined`;
+exports[`GameContainer gameContainer Component Should match the snapshot 1`] = `undefined`;

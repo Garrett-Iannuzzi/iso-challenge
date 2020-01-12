@@ -12,7 +12,7 @@ describe('GameContainer', () => {
       wrapper = shallow(<GameContainer />)
     });
 
-    it('should match the snapshot', () => {
+    it('Should match the snapshot', () => {
       expect(wrapper).toMatchSnapshot()
     });
   });
