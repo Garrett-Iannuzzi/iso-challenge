@@ -11,9 +11,6 @@ import GameContainer from '../../Containers/GameContainer/GameContainer';
 
 
 export class App extends Component {
-  constructor() {
-    super()
-  }
 
   componentDidMount() {
     getPlayers(1)
@@ -26,10 +23,10 @@ export class App extends Component {
   render() {
     return (
       <body>
-        <Route exact path='/' render={() => 
+        <Route exact path='/' render={({ history }) => 
           <main>
             <Nav />
-            <HomeContainer />
+            <HomeContainer history={history} />
           </main>
           }
           />

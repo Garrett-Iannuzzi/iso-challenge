@@ -13,3 +13,8 @@ export const getStatsInfo = (stats) => ({
   type: 'GET_STATS',
   stats
 });
+
+export const isLoggedIn = (isLoggedIn) => ({
+  type: 'GET_LOGIN',
+  isLoggedIn: isLoggedIn
+})
