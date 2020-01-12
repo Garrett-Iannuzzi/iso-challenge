@@ -17,7 +17,9 @@ export const getNextPlayerPage = async (res, addMorePlayers) => {
   }
 }
 
-export const getStats = () => {
+export const getStats = (playerIds) => {
+  //make a fetch call for each player id, async await 
+  // URL: https://www.balldontlie.io/api/v1/stats/?seasons[]=2018&seasons[]=2015&player_ids[]=1&player_ids[]=2&postseason=true
   return fetch('https://www.balldontlie.io/api/v1/stats')
   .then(res => {
     if(!res.ok) {

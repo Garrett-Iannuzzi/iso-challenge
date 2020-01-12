@@ -8,6 +8,7 @@ import { getPlayerInfo, getStatsInfo } from '../../actions/actions';
 import HomeContainer from '../../Containers/HomeContainer/HomeContainer';
 import Rules from '../../Components/Rules/Rules';
 import GameContainer from '../../Containers/GameContainer/GameContainer';
+import ScoreBoard from '../../Containers/ScoreBoard/ScoreBoard';
 
 
 export class App extends Component {
@@ -18,8 +19,6 @@ export class App extends Component {
       this.props.playerInfo(res.data)
       getNextPlayerPage(res, this.props.playerInfo)
     })
-    getStats()
-    .then(res => this.props.statsInfo(res.data))
     .catch(err => console.log(err))
   }
 
@@ -44,6 +43,13 @@ export class App extends Component {
           <main>
             <Nav />
             <GameContainer />
+          </main>
+          }
+        />
+        <Route path='/score' render={() =>
+          <main>
+            <Nav />
+            <ScoreBoard />
           </main>
           }
         />

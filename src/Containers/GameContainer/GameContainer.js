@@ -2,7 +2,7 @@ import React from 'react';
 import './GameContainer.scss';
 import { connect } from 'react-redux';
 import PlayerSelect from '../../Components/PlayerSelect/PlayerSelect';
-
+import { Link } from 'react-router-dom';
 
 const GameContainer = (props) => {
 
@@ -19,7 +19,7 @@ const GameContainer = (props) => {
   const getPlayersByPosition = (position, team, index) => {
     const filteredPlayers = playerInfo.filter(player => player.position === position || !player.position);
     const filteredNames = filteredPlayers.reduce((fullName, currentPlayer) => {
-      fullName.push(currentPlayer.last_name + ', ' + currentPlayer.first_name)
+      fullName.push(currentPlayer.last_name + ',' + currentPlayer.first_name)
       return fullName.sort()
     }, []);
     const individualPlayerName = filteredNames.map(name => {
@@ -45,6 +45,21 @@ const GameContainer = (props) => {
       return teamTwo[metric]
     }
   }
+
+  const getPlayerIds = (index) => {
+    const playerIds = teamInfo[index].players.map(player => {
+      const playerLastName = player.split(',')[0];
+      const playerFirstName = player.split(',')[1];
+      return playerInfo.find(hoopStar => hoopStar.last_name === playerLastName && hoopStar.first_name === playerFirstName).id
+    })
+    return playerIds
+    // handleGetStats()
+  }
+
+  // handleGetStats = (playerIds) => {
+  //   getStats(playerIds)
+  //     .then(res => this.props.statsInfo(res.data))
+  // }
 
   return(
     <>
@@ -87,7 +102,9 @@ const GameContainer = (props) => {
             {getPlayersByPosition('F', 'teamTwo', 4)}
         </section>
       </div>
-      <button className='btn-stats'>Get Stats</button>
+      <Link to='/score'>
+        <button className='btn-stats' onClick={ () => getPlayerIds(0) }>Get Stats</button>
+      </Link>
     </>
   )
 }
