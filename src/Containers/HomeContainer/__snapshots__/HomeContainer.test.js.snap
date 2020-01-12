@@ -27,7 +27,7 @@ exports[`HomeContainer homeContainer Component should match the snapshot 1`] = `
       id="skillLevelOne"
       name="skillLevelOne"
       onChange={[Function]}
-      value=""
+      value="And-1"
     >
       <option
         value="And-1"
@@ -40,7 +40,7 @@ exports[`HomeContainer homeContainer Component should match the snapshot 1`] = `
         D League
       </option>
       <option
-        value=""
+        value="NBA"
       >
         NBA
       </option>
@@ -71,7 +71,7 @@ exports[`HomeContainer homeContainer Component should match the snapshot 1`] = `
       id="skillLevelTwo"
       name="skillLevelTwo"
       onChange={[Function]}
-      value=""
+      value="And-1"
     >
       <option
         value="And-1"
@@ -90,16 +90,12 @@ exports[`HomeContainer homeContainer Component should match the snapshot 1`] = `
       </option>
     </select>
   </form>
-  <Link
-    to="/game"
+  <button
+    className="btn-start"
+    onClick={[Function]}
+    type="button"
   >
-    <button
-      className="btn-start"
-      onClick={[Function]}
-      type="button"
-    >
-      Start The Game
-    </button>
-  </Link>
+    Start The Game
+  </button>
 </div>
 `;
