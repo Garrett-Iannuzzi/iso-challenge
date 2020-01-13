@@ -15,5 +15,9 @@ exports[`App App Component should match the snapshot 1`] = `
     path="/game"
     render={[Function]}
   />
+  <Route
+    path="/score"
+    render={[Function]}
+  />
 </body>
 `;
