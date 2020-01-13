@@ -2,6 +2,8 @@ import React from 'react';
 import './GameContainer.scss';
 import { connect } from 'react-redux';
 import PlayerSelect from '../../Components/PlayerSelect/PlayerSelect';
+import { getStats } from '../../apiCalls';
+import { getStatsInfo } from '../../actions/actions';
 import { Link } from 'react-router-dom';
 
 const GameContainer = (props) => {
@@ -9,17 +11,13 @@ const GameContainer = (props) => {
   const { playerInfo, teamInfo } = props;
 
   const displayLabel = (position) => {
-    return(
-      <>
-        <label>{position}:</label>
-      </>
-    )
+    return( <label>{position}:</label> )
   }
 
   const getPlayersByPosition = (position, team, index) => {
     const filteredPlayers = playerInfo.filter(player => player.position === position || !player.position);
     const filteredNames = filteredPlayers.reduce((fullName, currentPlayer) => {
-      fullName.push(currentPlayer.last_name + ',' + currentPlayer.first_name)
+      fullName.push(currentPlayer.last_name + ', ' + currentPlayer.first_name)
       return fullName.sort()
     }, []);
     const individualPlayerName = filteredNames.map(name => {
@@ -48,18 +46,18 @@ const GameContainer = (props) => {
 
   const getPlayerIds = (index) => {
     const playerIds = teamInfo[index].players.map(player => {
-      const playerLastName = player.split(',')[0];
-      const playerFirstName = player.split(',')[1];
+      const playerLastName = player.split(', ')[0];
+      const playerFirstName = player.split(', ')[1];
       return playerInfo.find(hoopStar => hoopStar.last_name === playerLastName && hoopStar.first_name === playerFirstName).id
     })
-    return playerIds
-    // handleGetStats()
+    handleGetStats(playerIds)
   }
 
-  // handleGetStats = (playerIds) => {
-  //   getStats(playerIds)
-  //     .then(res => this.props.statsInfo(res.data))
-  // }
+  const handleGetStats = (playerIds) => {
+    getStats(playerIds)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
 
   return(
     <>
@@ -108,10 +106,15 @@ const GameContainer = (props) => {
     </>
   )
 }
+//  <button className='btn-stats' onClick={ () => {getPlayerIds(0); getPlayerIds(1)} }>Get Stats</button>
 
 export const mapStateToProps = state => ({
   playerInfo: state.playerInfo,
   teamInfo: state.teamInfo
 })
 
-export default connect(mapStateToProps)(GameContainer)
+export const mapDispatchToProps = dispatch => ({
+  statsInfo: stats => dispatch(getStatsInfo(stats))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameContainer)
