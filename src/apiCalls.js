@@ -18,8 +18,9 @@ export const getNextPlayerPage = async (res, addMorePlayers) => {
 }
 
 export const getStats = (playerIds) => {
+  console.log(playerIds)
   return playerIds.map(playerId => {
-    return fetch(`https://www.balldontlie.io/api/v1/stats/?seasons[]=2018&seasons[]=2015&player_ids[${playerId}]=1&player_ids[${playerId}]=2&postseason=false`)
+    return fetch(`https://www.balldontlie.io/api/v1/stats/?player_ids[]=${playerId}&player_ids[]=${playerId}&seasons=2017&seasons=2019`)
     .then(res => {
       if(!res.ok) {
         throw Error('Error fetching stats')
