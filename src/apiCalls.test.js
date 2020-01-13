@@ -64,23 +64,23 @@ describe('apiCalls', () => {
       expect(getPlayers()).resolves.toEqual(mockResponse)
     });
     
-    // it('should throw an error if fetch fails', () => {
-    //   window.fetch = jest.fn().mockImplementation(()=> {
-    //     return Promise.resolve({
-    //       ok: false
-    //     })
-    //   })
+    it('should throw an error if fetch fails', () => {
+      window.fetch = jest.fn().mockImplementation(()=> {
+        return Promise.resolve({
+          ok: false
+        })
+      })
 
-    //   expect(fetchMovies()).rejects.toEqual(Error('Error fetching movies'))
-    // }) 
+      expect(getPlayers()).rejects.toEqual(Error('Error fetching players'))
+    }) 
 
-    // it('should return an error if promise rejects', () => {
-    //   window.fetch = jest.fn().mockImplementation(() => {
-    //     return Promise.reject(Error('fetch failed'))
-    //   })
+    it('should return an error if promise rejects', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('fetch failed'))
+      })
 
-    //   expect(fetchMovies()).rejects.toEqual(Error('fetch failed'))
-    // })
+      expect(getPlayers()).rejects.toEqual(Error('fetch failed'))
+    })
   })
 
 });
