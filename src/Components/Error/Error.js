@@ -14,7 +14,7 @@ export const Error = (props) => {
     <section className='section-error'>
       <div className='p-error-container'>
         <h3 className='header-error'>Error!!</h3>
-        <p className='p-error'>*All fields must be filled out to login*</p>
+        <p className='p-error'>*All fields must be filled out to hoop*</p>
       </div>
       <button className='button-error' onClick={ () => goHome() }>Back To Home</button>
     </section>

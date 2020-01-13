@@ -49,58 +49,60 @@ export class HomeContainer extends Component {
     if(this.props.login === false) {
       return(this.showError())
     }
-    return(   
-      <div>
-        <form>
-          <label for='teamOneName'>Team 1 Name</label>
-          <input
-            name='teamOneName'
-            className='input-team-one'
-            value={this.state.teamOneName}
-            placeholder='Enter Team Name'
-            type='text'
-            maxLength='25'
-            onChange={ (e) => this.handleChange(e) }
-          />
-          <label for='skillLevelOne'>Select Level</label>
-          <select
-            id='skillLevelOne'
-            value={this.state.skillLevelOne}
-            name='skillLevelOne'
-            className='select-skill-one'
-            onChange={ (e) => this.handleChange(e) }
-          >
-            <option value='And-1'>And-1</option>
-            <option value='D League'>D League</option>
-            <option value='NBA'>NBA</option>
-          </select>
-        </form>
-        <form>
-          <label for='teamNameTwo'>Team 2 Name</label>
-          <input
-            name='teamTwoName'
-            className='input-team-two'
-            value={this.state.teamTwoName}
-            placeholder='Enter Team Name'
-            type='text'
-            maxLength='25'
-            onChange={ (e) => this.handleChange(e) }
-          />
-          <label for='skillLevelTwo'>Select Level</label>
-          <select
-            id='skillLevelTwo'
-            value={this.state.skillLevelTwo}
-            name='skillLevelTwo'
-            className='select-skill-two'
-            onChange={ (e) => this.handleChange(e) }
-          >
-            <option value='And-1'>And-1</option>
-            <option value='D League'>D League</option>
-            <option value='NBA'>NBA</option>
-          </select>
-        </form>
-          <button className='btn-start' type='button' onClick={ () => this.handleStartError() }>Start The Game</button>
-      </div>
+    return(
+      <>   
+        <div className='div-select-team'>
+          <form>
+            <label for='teamOneName'>Team 1 Name:</label>
+            <input
+              name='teamOneName'
+              className='input-team-one'
+              value={this.state.teamOneName}
+              placeholder='Enter Team Name'
+              type='text'
+              maxLength='25'
+              onChange={ (e) => this.handleChange(e) }
+            />
+            <label for='skillLevelOne'>Select Level:</label>
+            <select
+              id='skillLevelOne'
+              value={this.state.skillLevelOne}
+              name='skillLevelOne'
+              className='select-skill-one'
+              onChange={ (e) => this.handleChange(e) }
+            >
+              <option value='And-1'>And-1</option>
+              <option value='D League'>D League</option>
+              <option value='NBA'>NBA</option>
+            </select>
+          </form>
+          <form>
+            <label for='teamNameTwo'>Team 2 Name:</label>
+            <input
+              name='teamTwoName'
+              className='input-team-two'
+              value={this.state.teamTwoName}
+              placeholder='Enter Team Name'
+              type='text'
+              maxLength='25'
+              onChange={ (e) => this.handleChange(e) }
+            />
+            <label for='skillLevelTwo'>Select Level:</label>
+            <select
+              id='skillLevelTwo'
+              value={this.state.skillLevelTwo}
+              name='skillLevelTwo'
+              className='select-skill-two'
+              onChange={ (e) => this.handleChange(e) }
+            >
+              <option value='And-1'>And-1</option>
+              <option value='D League'>D League</option>
+              <option value='NBA'>NBA</option>
+            </select>
+          </form>
+        </div>
+        <button className='btn-start' type='button' onClick={ () => this.handleStartError() }>Start The Game</button>
+      </>
     )
   }
 }

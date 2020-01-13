@@ -18,14 +18,15 @@ export const ScoreBoard = (props) => {
 
   return(
     <div>
-      <h2>Score Board</h2>
+      <h2 className='h2-score'>Score Board</h2>
       <div className='div-score-board'>
         <section className='section-team-score'>
-          <h4>Team 1 Name</h4>
-          <p>Total Team Shooting Percent: }</p>
+          <h4 className='h4-score'>Team 1 Name</h4>
+          <p>Total Team Shooting Percent: </p>
         </section>
         <section className='section-team-score'>
-          <h4>Team 2 Name</h4>
+          <h4 className='h4-score'>Team 2 Name</h4>
+          <p>Total Team Shooting Percent: </p>
         </section>
       </div>
     </div>
