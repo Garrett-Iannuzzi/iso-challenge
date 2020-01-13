@@ -2,13 +2,13 @@ import React from 'react';
 import './GameContainer.scss';
 import { connect } from 'react-redux';
 import PlayerSelect from '../../Components/PlayerSelect/PlayerSelect';
-import { getStats } from '../../apiCalls';
 import { getStatsInfo } from '../../actions/actions';
 import { Link } from 'react-router-dom';
+import { getStats } from '../../apiCalls';
 
-const GameContainer = (props) => {
+export const GameContainer = (props) => {
 
-  const { playerInfo, teamInfo } = props;
+  const { playerInfo, teamInfo, statsInfo } = props;
 
   const displayLabel = (position) => {
     return( <label>{position}:</label> )
@@ -54,9 +54,9 @@ const GameContainer = (props) => {
   }
 
   const handleGetStats = (playerIds) => {
-    getStats(playerIds)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+    let promises = getStats(playerIds)
+    const playerStatData = Promise.all(promises).then(res => props.statsInfo(res))
+    return playerStatData
   }
 
   return(

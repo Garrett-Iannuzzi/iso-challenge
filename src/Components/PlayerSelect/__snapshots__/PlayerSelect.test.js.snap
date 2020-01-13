@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerSelect PlayerSelect Component should match the snapshot 1`] = `
+<select
+  onChange={[Function]}
+  value=""
+/>
+`;

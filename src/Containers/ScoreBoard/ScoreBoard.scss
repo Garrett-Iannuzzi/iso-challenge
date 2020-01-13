@@ -1,0 +1,19 @@
+.div-score-board {
+  display: flex;
+}
+
+.section-team-score {
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30em;
+  margin: 3em;
+  width: 45%;
+  &>h2 {
+    text-align: center;
+  }
+  &>h4 {
+    text-align: center;
+  }
+}
