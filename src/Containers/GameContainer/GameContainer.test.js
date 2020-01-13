@@ -1,5 +1,6 @@
 import React from 'react';
-import { GameContainer, mapStateToProps } from './GameContainer';
+import { GameContainer, mapStateToProps, mapDispatchToProps } from './GameContainer';
+import { teamInfo , playerInfo} from ''
 import { shallow } from 'enzyme';
 
 describe('GameContainer', () => {
@@ -78,5 +79,4 @@ describe('GameContainer', () => {
       expect(mappedProps).toEqual(expected);
     })
   });
-
 })
