@@ -6,7 +6,7 @@ import { getStats } from '../../apiCalls';
 import { getStatsInfo } from '../../actions/actions';
 import { Link } from 'react-router-dom';
 
-const GameContainer = (props) => {
+export const GameContainer = (props) => {
 
   const { playerInfo, teamInfo } = props;
 

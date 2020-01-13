@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { isLoggedIn } from '../../actions/actions';
 
 
-const Error = (props) => {
+export const Error = (props) => {
   const goHome = () => {
     props.isLoggedIn(null)
     return props.history.push('/')
