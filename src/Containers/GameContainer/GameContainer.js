@@ -61,7 +61,6 @@ export const GameContainer = (props) => {
   }
 
   const getPlayerIds = (playerIds) => {
-    console.log(playerIds)
     handleGetStats(playerIds[0]).then(data => statsInfoOne(data));
     handleGetStats(playerIds[1]).then(data => statsInfoTwo(data));
   }

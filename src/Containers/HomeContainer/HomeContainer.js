@@ -20,7 +20,6 @@ export class HomeContainer extends Component {
   }
 
   showError = () => {
-    console.log('error')
     return(
       <Error history={this.props.history}/>
     )
