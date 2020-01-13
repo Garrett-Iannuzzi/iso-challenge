@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import { Route } from 'react-router-dom';
-import { getPlayers, getStats } from '../../apiCalls';
+import { getPlayers, getNextPlayerPage } from '../../apiCalls';
 import './App.scss';
 import { connect } from 'react-redux';
-import { getPlayerInfo, getStatsInfo } from '../../actions/actions';
+import { getPlayerInfo } from '../../actions/actions';
 import HomeContainer from '../../Containers/HomeContainer/HomeContainer';
 import Rules from '../../Components/Rules/Rules';
 import GameContainer from '../../Containers/GameContainer/GameContainer';
-
+import ScoreBoard from '../../Containers/ScoreBoard/ScoreBoard';
 
 export class App extends Component {
 
-  componentDidMount() {
-    getPlayers(1)
-    .then(res => this.props.playerInfo(res.data))
-    getStats()
-    .then(res => this.props.statsInfo(res.data))
+  async componentDidMount() {
+    await getPlayers(1)
+    .then(res => {
+      this.props.playerInfo(res.data)
+      getNextPlayerPage(res, this.props.playerInfo)
+    })
     .catch(err => console.log(err))
   }
 
@@ -26,7 +27,7 @@ export class App extends Component {
         <Route exact path='/' render={({ history }) => 
           <main>
             <Nav />
-            <HomeContainer history={history} />
+            <HomeContainer history={ history } />
           </main>
           }
           />
@@ -44,6 +45,13 @@ export class App extends Component {
           </main>
           }
         />
+        <Route path='/score' render={() =>
+          <main>
+            <Nav />
+            <ScoreBoard />
+          </main>
+          }
+        />
       </body>
     );
   }
@@ -51,7 +59,6 @@ export class App extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   playerInfo: players => dispatch(getPlayerInfo(players)),
-  statsInfo: stats => dispatch(getStatsInfo(stats))
 })
 
 export default connect(null, mapDispatchToProps)(App)
