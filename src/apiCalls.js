@@ -18,7 +18,6 @@ export const getNextPlayerPage = async (res, addMorePlayers) => {
 }
 
 export const getStats = (playerIds) => {
-  console.log(playerIds)
   return playerIds.map(playerId => {
     return fetch(`https://www.balldontlie.io/api/v1/stats/?player_ids[]=${playerId}&player_ids[]=${playerId}&seasons=2017&seasons=2019`)
     .then(res => {

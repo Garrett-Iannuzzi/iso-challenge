@@ -53,7 +53,7 @@ export const GameContainer = (props) => {
     handleGetStats(playerIds)
   }
 
-  const handleGetStats =  (playerIds) => {
+  const handleGetStats = (playerIds) => {
     let promises = getStats(playerIds)
     const playerStatData = Promise.all(promises).then(res => props.statsInfo(res))
     return playerStatData
