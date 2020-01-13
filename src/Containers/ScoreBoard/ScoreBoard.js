@@ -6,14 +6,13 @@ export const ScoreBoard = (props) => {
 
   const { statsInfo } = props;
 
-  // const getMetric = (metric) => {
-  //   console.log(statsInfo)
-  //   const totalValue = statsInfo.readuce((acc, cv) => {
-  //     acc += cv[metric]
-  //     return acc
-  //   }, 0)
-  //   return totalValue
-  // }
+  const getMetric = (metric) => {
+    const totalValue = statsInfo.readuce((acc, cv) => {
+      acc += cv[metric]
+      return acc
+    }, 0)
+    return totalValue
+  }
 
 
   return(

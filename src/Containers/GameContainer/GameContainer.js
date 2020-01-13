@@ -2,13 +2,13 @@ import React from 'react';
 import './GameContainer.scss';
 import { connect } from 'react-redux';
 import PlayerSelect from '../../Components/PlayerSelect/PlayerSelect';
-import { getStatsInfo } from '../../actions/actions';
+import { getStatsInfoOne, getStatsInfoTwo } from '../../actions/actions';
 import { Link } from 'react-router-dom';
 import { getStats } from '../../apiCalls';
 
 export const GameContainer = (props) => {
 
-  const { playerInfo, teamInfo, statsInfo } = props;
+  const { playerInfo, teamInfo, statsInfoOne, statsInfoTwo } = props;
 
   const displayLabel = (position) => {
     return( <label className='game-label'>{position}:</label> )
@@ -44,19 +44,33 @@ export const GameContainer = (props) => {
     }
   }
 
-  const getPlayerIds = (index) => {
-    const playerIds = teamInfo[index].players.map(player => {
+  const handleGetPlayerIds = () => {
+    const playerIdsTeamOne = teamInfo[0].players.map(player => {
       const playerLastName = player.split(', ')[0];
       const playerFirstName = player.split(', ')[1];
       return playerInfo.find(hoopStar => hoopStar.last_name === playerLastName && hoopStar.first_name === playerFirstName).id
     })
-    handleGetStats(playerIds)
+    const playerIdsTeamTwo = teamInfo[1].players.map(player => {
+      const playerLastName = player.split(', ')[0];
+      const playerFirstName = player.split(', ')[1];
+      return playerInfo.find(hoopStar => hoopStar.last_name === playerLastName && hoopStar.first_name === playerFirstName).id
+    })
+
+    const groupedIds = [ playerIdsTeamOne, playerIdsTeamTwo ]
+    getPlayerIds(groupedIds)
+  }
+
+  const getPlayerIds = (playerIds) => {
+    console.log(playerIds)
+    handleGetStats(playerIds[0]).then(data => statsInfoOne(data));
+    handleGetStats(playerIds[1]).then(data => statsInfoTwo(data));
   }
 
   const handleGetStats = (playerIds) => {
     let promises = getStats(playerIds)
-    const playerStatData = Promise.all(promises).then(res => props.statsInfo(res))
-    return playerStatData
+    return Promise.all(promises).then(info => {
+      return info
+    })
   }
 
   return(
@@ -101,12 +115,11 @@ export const GameContainer = (props) => {
         </section>
       </div>
       <Link to='/score'>
-        <button className='btn-stats' onClick={ () => getPlayerIds(0) }>Get Stats</button>
+        <button className='btn-stats' onClick={ () => handleGetPlayerIds() }>Get Stats</button>
       </Link>
     </>
   )
 }
-//  <button className='btn-stats' onClick={ () => {getPlayerIds(0); getPlayerIds(1)} }>Get Stats</button>
 
 export const mapStateToProps = state => ({
   playerInfo: state.playerInfo,
@@ -114,7 +127,8 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  statsInfo: stats => dispatch(getStatsInfo(stats))
+  statsInfoOne: (statsTeamOne) => dispatch(getStatsInfoOne(statsTeamOne)),
+  statsInfoTwo: (statsTeamTwo) => dispatch(getStatsInfoTwo(statsTeamTwo))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameContainer)

@@ -9,9 +9,14 @@ export const getPlayerInfo = (playerInfo) => ({
   playerInfo
 });
 
-export const getStatsInfo = (stats) => ({
-  type: 'GET_STATS',
-  stats
+export const getStatsInfoOne = (statsOne) => ({
+  type: 'GET_STATS_ONE',
+  statsOne
+});
+
+export const getStatsInfoTwo = (statsTwo) => ({
+  type: 'GET_STATS_TWO',
+  statsTwo
 });
 
 export const isLoggedIn = (isLoggedIn) => ({
