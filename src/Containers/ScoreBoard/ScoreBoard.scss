@@ -4,16 +4,21 @@
 
 .section-team-score {
   border: solid 2px black;
+  background-color: rgb(225, 207, 228);
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 30em;
   margin: 3em;
   width: 45%;
-  &>h2 {
-    text-align: center;
-  }
-  &>h4 {
-    text-align: center;
-  }
+}
+
+.h2-score {
+  font-size: 3em;
+  color: white;
+  text-align: center;
+}
+
+.h4-score {
+  text-align: center;
 }
