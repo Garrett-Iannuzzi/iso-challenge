@@ -11,7 +11,7 @@ export const GameContainer = (props) => {
   const { playerInfo, teamInfo, statsInfo } = props;
 
   const displayLabel = (position) => {
-    return( <label>{position}:</label> )
+    return( <label className='game-label'>{position}:</label> )
   }
 
   const getPlayersByPosition = (position, team, index) => {
@@ -63,8 +63,8 @@ export const GameContainer = (props) => {
     <>
       <div className='game-container'>
         <section className='section-team'>
-          <h2>{getTeamMetric(1, 'teamOneName')}</h2>
-          <h4>{getTeamMetric(1, 'skillLevelOne')}</h4>
+          <h2 className='team-name'>{getTeamMetric(1, 'teamOneName')}</h2>
+          <h4 className='h4-game'>{getTeamMetric(1, 'skillLevelOne')}</h4>
             {displayLabel('Center')}
             {getPlayersByPosition('C', 'teamOne', 0)}
 
@@ -82,8 +82,8 @@ export const GameContainer = (props) => {
         </section>
 
         <section className='section-team'>
-          <h2>{getTeamMetric(2, 'teamTwoName')}</h2>
-          <h4>{getTeamMetric(2, 'skillLevelTwo')}</h4>
+          <h2 className='team-name'>{getTeamMetric(2, 'teamTwoName')}</h2>
+          <h4 className='h4-game'>{getTeamMetric(2, 'skillLevelTwo')}</h4>
             {displayLabel('Center')}
             {getPlayersByPosition('C', 'teamTwo', 0)}
 
