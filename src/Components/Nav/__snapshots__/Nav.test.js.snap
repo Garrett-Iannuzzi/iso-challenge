@@ -4,22 +4,35 @@ exports[`Nav Nav Component should match the snapshot 1`] = `
 <div>
   <nav>
     <h1>
-      NBA Iso-Challenge
+      NBA IS
+      <img
+        className="img-bball"
+        src="basketball.png"
+      />
+      -Challenge
     </h1>
-    <Link
-      to="/rules"
+    <div
+      className="btn-div"
     >
-      <button>
-        Rules Expert
-      </button>
-    </Link>
-    <Link
-      to="/"
-    >
-      <button>
-        Home
-      </button>
-    </Link>
+      <Link
+        to="/rules"
+      >
+        <button
+          className="btn"
+        >
+          Rules Expert
+        </button>
+      </Link>
+      <Link
+        to="/"
+      >
+        <button
+          className="btn"
+        >
+          Home
+        </button>
+      </Link>
+    </div>
   </nav>
 </div>
 `;

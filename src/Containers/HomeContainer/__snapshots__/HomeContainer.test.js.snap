@@ -1,95 +1,99 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomeContainer homeContainer Component should match the snapshot 1`] = `
-<div>
-  <form>
-    <label
-      for="teamOneName"
-    >
-      Team 1 Name
-    </label>
-    <input
-      className="input-team-one"
-      maxLength="25"
-      name="teamOneName"
-      onChange={[Function]}
-      placeholder="Enter Team Name"
-      type="text"
-      value=""
-    />
-    <label
-      for="skillLevelOne"
-    >
-      Select Level
-    </label>
-    <select
-      className="select-skill-one"
-      id="skillLevelOne"
-      name="skillLevelOne"
-      onChange={[Function]}
-      value="And-1"
-    >
-      <option
+<Fragment>
+  <div
+    className="div-select-team"
+  >
+    <form>
+      <label
+        for="teamOneName"
+      >
+        Team 1 Name:
+      </label>
+      <input
+        className="input-team-one"
+        maxLength="25"
+        name="teamOneName"
+        onChange={[Function]}
+        placeholder="Enter Team Name"
+        type="text"
+        value=""
+      />
+      <label
+        for="skillLevelOne"
+      >
+        Select Level:
+      </label>
+      <select
+        className="select-skill-one"
+        id="skillLevelOne"
+        name="skillLevelOne"
+        onChange={[Function]}
         value="And-1"
       >
-        And-1
-      </option>
-      <option
-        value="D League"
+        <option
+          value="And-1"
+        >
+          And-1
+        </option>
+        <option
+          value="D League"
+        >
+          D League
+        </option>
+        <option
+          value="NBA"
+        >
+          NBA
+        </option>
+      </select>
+    </form>
+    <form>
+      <label
+        for="teamNameTwo"
       >
-        D League
-      </option>
-      <option
-        value="NBA"
+        Team 2 Name:
+      </label>
+      <input
+        className="input-team-two"
+        maxLength="25"
+        name="teamTwoName"
+        onChange={[Function]}
+        placeholder="Enter Team Name"
+        type="text"
+        value=""
+      />
+      <label
+        for="skillLevelTwo"
       >
-        NBA
-      </option>
-    </select>
-  </form>
-  <form>
-    <label
-      for="teamNameTwo"
-    >
-      Team 2 Name
-    </label>
-    <input
-      className="input-team-two"
-      maxLength="25"
-      name="teamTwoName"
-      onChange={[Function]}
-      placeholder="Enter Team Name"
-      type="text"
-      value=""
-    />
-    <label
-      for="skillLevelTwo"
-    >
-      Select Level
-    </label>
-    <select
-      className="select-skill-two"
-      id="skillLevelTwo"
-      name="skillLevelTwo"
-      onChange={[Function]}
-      value="And-1"
-    >
-      <option
+        Select Level:
+      </label>
+      <select
+        className="select-skill-two"
+        id="skillLevelTwo"
+        name="skillLevelTwo"
+        onChange={[Function]}
         value="And-1"
       >
-        And-1
-      </option>
-      <option
-        value="D League"
-      >
-        D League
-      </option>
-      <option
-        value="NBA"
-      >
-        NBA
-      </option>
-    </select>
-  </form>
+        <option
+          value="And-1"
+        >
+          And-1
+        </option>
+        <option
+          value="D League"
+        >
+          D League
+        </option>
+        <option
+          value="NBA"
+        >
+          NBA
+        </option>
+      </select>
+    </form>
+  </div>
   <button
     className="btn-start"
     onClick={[Function]}
@@ -97,5 +101,5 @@ exports[`HomeContainer homeContainer Component should match the snapshot 1`] = `
   >
     Start The Game
   </button>
-</div>
+</Fragment>
 `;

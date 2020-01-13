@@ -15,7 +15,7 @@ exports[`Error Error Component should match the snapshot 1`] = `
     <p
       className="p-error"
     >
-      *All fields must be filled out to login*
+      *All fields must be filled out to hoop*
     </p>
   </div>
   <button
