@@ -20,21 +20,21 @@ export const ScoreBoard = (props) => {
       <div className='div-score-board'>
         <section className='section-team-score'>
           <h4 className='h4-score'>{teamsInfo[0].teamOneName}</h4>
-          <h5>SkillLevel: {teamsInfo[0].skillLevelOne}</h5>
-          <p>Your Total Points: {getMetric(statsInfoOne, 'pts')}</p>
-          <p>Your Total Assists: {getMetric(statsInfoOne, 'ast')}</p>
-          <p>Your Total Rebounds: {getMetric(statsInfoOne, 'reb')}</p>
-          <p>Your Total Blocks: {getMetric(statsInfoOne, 'reb')}</p>
-          <p>Your Total Steals: {getMetric(statsInfoOne, 'stl')}</p>
+          <h5 className='h5-skill'>SkillLevel: {teamsInfo[0].skillLevelOne}</h5>
+          <p><b>Your Total Points:</b> {getMetric(statsInfoOne, 'pts')}</p>
+          <p><b>Your Total Assists:</b> {getMetric(statsInfoOne, 'ast')}</p>
+          <p><b>Your Total Rebounds:</b> {getMetric(statsInfoOne, 'reb')}</p>
+          <p><b>Your Total Blocks:</b> {getMetric(statsInfoOne, 'reb')}</p>
+          <p><b>Your Total Steals:</b> {getMetric(statsInfoOne, 'stl')}</p>
         </section>
         <section className='section-team-score'>
           <h4 className='h4-score'>{teamsInfo[1].teamTwoName}</h4>
-          <h5>SkillLevel: {teamsInfo[1].skillLevelTwo}</h5>
-          <p>Your Total Points: {getMetric(statsInfoTwo, 'pts')}</p>
-          <p>Your Total Assists: {getMetric(statsInfoTwo, 'ast')}</p>
-          <p>Your Total Rebounds: {getMetric(statsInfoTwo, 'reb')}</p>
-          <p>Your Total Blocks: {getMetric(statsInfoTwo, 'reb')}</p>
-          <p>Your Total Steals: {getMetric(statsInfoTwo, 'stl')}</p>
+          <h5 className='h5-skill'>SkillLevel: {teamsInfo[1].skillLevelTwo}</h5>
+          <p><b>Your Total Points:</b> {getMetric(statsInfoTwo, 'pts')}</p>
+          <p><b>Your Total Assists:</b> {getMetric(statsInfoTwo, 'ast')}</p>
+          <p><b>Your Total Rebounds:</b> {getMetric(statsInfoTwo, 'reb')}</p>
+          <p><b>Your Total Blocks:</b> {getMetric(statsInfoTwo, 'reb')}</p>
+          <p><b>Your Total Steals:</b> {getMetric(statsInfoTwo, 'stl')}</p>
         </section>
       </div>
     </div>
