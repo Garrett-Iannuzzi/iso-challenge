@@ -30,6 +30,15 @@
 
 ### Screenshots:
 
+- Home Page:
+![home-page](https://user-images.githubusercontent.com/48968224/72304042-908f6900-362c-11ea-9e87-cb432385fb00.png)
+
+- Player Select Page
+![Screen Shot 2020-01-13 at 5 25 28 PM](https://user-images.githubusercontent.com/48968224/72304068-a4d36600-362c-11ea-9f62-65504a6f98ec.png)
+
+- Score Board
+![Screen Shot 2020-01-13 at 5 26 09 PM](https://user-images.githubusercontent.com/48968224/72304087-b9aff980-362c-11ea-9498-a980204aaa2e.png)
+
 
   
   
