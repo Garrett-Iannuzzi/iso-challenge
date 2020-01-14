@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './PlayerSelect.scss';
 import { connect } from 'react-redux';
 import { selectPlayer } from '../../actions/actions';
+import PropTypes from 'prop-types';
 
 export class PlayerSelect extends Component {
   constructor(props) {
@@ -32,3 +33,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(PlayerSelect)
+
+PlayerSelect.propTypes = {
+  selectPlayer: PropTypes.func
+}

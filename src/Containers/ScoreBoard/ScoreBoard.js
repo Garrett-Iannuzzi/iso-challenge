@@ -1,6 +1,7 @@
 import React from 'react';
 import './ScoreBoard.scss';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export const ScoreBoard = (props) => {
 
@@ -49,3 +50,9 @@ export const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(ScoreBoard)
+
+ScoreBoard.propTypes = {
+  teamsInfo: PropTypes.func,
+  statsInfoOne: PropTypes.func,
+  statsInfoTwo: PropTypes.func
+}

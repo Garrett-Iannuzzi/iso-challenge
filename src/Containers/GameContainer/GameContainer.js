@@ -5,6 +5,7 @@ import PlayerSelect from '../../Components/PlayerSelect/PlayerSelect';
 import { getStatsInfoOne, getStatsInfoTwo } from '../../actions/actions';
 import { Link } from 'react-router-dom';
 import { getStats } from '../../apiCalls';
+import PropTypes from 'prop-types';
 
 export const GameContainer = (props) => {
 
@@ -131,3 +132,10 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameContainer)
+
+GameContainer.propTypes = {
+  playerInfo: PropTypes.func,
+  teamInfo: PropTypes.func,
+  statsInfoOne: PropTypes.func,
+  statsInfoTwo: PropTypes.func
+}

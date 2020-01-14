@@ -3,6 +3,7 @@ import './HomeContainer.scss';
 import Error from '../../Components/Error/Error';
 import { connect } from 'react-redux';
 import { getTeamsInfo, isLoggedIn } from '../../actions/actions';
+import PropTypes from 'prop-types';
 
 export class HomeContainer extends Component {
   constructor(props) {
@@ -116,3 +117,10 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
+
+HomeContainer.propTypes = {
+  login: PropTypes.bool,
+  isLoggedIn: PropTypes.func,
+  teamInfo: PropTypes.func,
+  history: PropTypes.func
+}
