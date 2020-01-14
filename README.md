@@ -15,7 +15,7 @@
 - React
 - Redux
 - React Router
-- Javascript
+- JavaScript
 - Scss
 - HTML
 - Jest / Enzyme
