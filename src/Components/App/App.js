@@ -9,6 +9,8 @@ import HomeContainer from '../../Containers/HomeContainer/HomeContainer';
 import Rules from '../../Components/Rules/Rules';
 import GameContainer from '../../Containers/GameContainer/GameContainer';
 import ScoreBoard from '../../Containers/ScoreBoard/ScoreBoard';
+import PropTypes from 'prop-types';
+
 
 export class App extends Component {
 
@@ -62,3 +64,7 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(App)
+
+App.propTypes = {
+  playerInfo: PropTypes.func
+}

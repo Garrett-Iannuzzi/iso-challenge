@@ -2,6 +2,8 @@ import React from 'react';
 import './Error.scss';
 import { connect } from 'react-redux';
 import { isLoggedIn } from '../../actions/actions';
+import PropTypes from 'prop-types';
+
 
 
 export const Error = (props) => {
@@ -26,3 +28,8 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(null, mapDispatchToProps)(Error)
+
+Error.propTypes = {
+  history: PropTypes.func,
+  isLoggedIn: PropTypes.func,
+}
