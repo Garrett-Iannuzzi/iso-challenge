@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Iso-Challenge
 
-## Available Scripts
+### Overview:
 
-In the project directory, you can run:
+- Iso-Challenge is an application intended for validating useless sports knowledge. On load the user will choose a team name and skill level, the user will have a list of current and past NBA players to choose from. The goal is to choose the group of players that produce the best satistics. The players and their stats are fetched form an API, sorted by their position, and displayed for the user to select. Once the teams are chosen you are routed to a score board page that holds the total numbers for each stat for their respective team. From here the user is free to argue with their oppisition all they want on which stats are more valuable.
 
-### `npm start`
+### Setup:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1) You can clone down this repo and run: `npm install`
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+2) To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:3000/` and you should see a page directing you to create a team.
 
-### `npm test`
+### Tech Stack:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- Redux
+- React Router
+- Javascript
+- Scss
+- HTML
+- Jest / Enzyme
+- npm
+- Webpack
+- Web APIs via the Fetch method
 
-### `npm run build`
+### Challenges and Wins:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Challenges: This project involved some complicated data structures, it was challenging to return the correct data at the correct time.  
+- Wins: This project demonstrates good usecases of react router, redux, and testing. (This might be a simple application but it was required to use Redux and it was a win!) 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Screenshots:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  
+  
