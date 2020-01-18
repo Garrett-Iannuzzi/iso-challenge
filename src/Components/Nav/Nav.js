@@ -15,6 +15,7 @@ const Nav = () => {
           <Link to='/'>
             <button className='btn'>Home</button>
           </Link>
+          <button className='btn'>Save Game</button>
         </div>
       </nav>
     </div>
