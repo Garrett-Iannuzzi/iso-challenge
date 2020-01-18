@@ -13,6 +13,13 @@
   width: 45%;
 }
 
+.section-score-board {
+  border: solid 4px black;
+  background-color: rgb(225, 207, 228);
+  height: 15em;
+  width: 35%;
+}
+
 .h2-score {
   font-size: 3em;
   color: white;
@@ -24,7 +31,14 @@
   font-size: 2.8em;
   font-weight: bolder;
   margin: 0;
-} 
+}
+
+.h4-score-board {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bolder;
+  margin: 0;
+}
 
 .h5-skill {
   text-align: center;
@@ -36,3 +50,5 @@ p {
   padding-left: 15px;
   font-size: 1em;
 }
+
+//styling for btn right now lives in NAV

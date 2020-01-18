@@ -22,15 +22,23 @@ export const ScoreBoard = (props) => {
         <section className='section-team-score'>
           <h4 className='h4-score'>{teamsInfo[0].teamOneName}</h4>
           <h5 className='h5-skill'>SkillLevel: {teamsInfo[0].skillLevelOne}</h5>
+
           <p><b>Your Total Points:</b> {getMetric(statsInfoOne, 'pts')}</p>
           <p><b>Your Total Assists:</b> {getMetric(statsInfoOne, 'ast')}</p>
           <p><b>Your Total Rebounds:</b> {getMetric(statsInfoOne, 'reb')}</p>
           <p><b>Your Total Blocks:</b> {getMetric(statsInfoOne, 'reb')}</p>
           <p><b>Your Total Steals:</b> {getMetric(statsInfoOne, 'stl')}</p>
         </section>
+
+        <section className='section-score-board'>
+          <h4 className='h4-score-board'>Score Board:</h4>
+          <button className='btn'>Save Matchup</button>
+        </section>
+
         <section className='section-team-score'>
           <h4 className='h4-score'>{teamsInfo[1].teamTwoName}</h4>
           <h5 className='h5-skill'>SkillLevel: {teamsInfo[1].skillLevelTwo}</h5>
+
           <p><b>Your Total Points:</b> {getMetric(statsInfoTwo, 'pts')}</p>
           <p><b>Your Total Assists:</b> {getMetric(statsInfoTwo, 'ast')}</p>
           <p><b>Your Total Rebounds:</b> {getMetric(statsInfoTwo, 'reb')}</p>
