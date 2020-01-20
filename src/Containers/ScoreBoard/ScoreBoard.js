@@ -17,7 +17,6 @@ export const ScoreBoard = (props) => {
 
   return(
     <div>
-      <h2 className='h2-score'>Score Board</h2>
       <div className='div-score-board'>
         <section className='section-team-score'>
           <h4 className='h4-score'>{teamsInfo[0].teamOneName}</h4>
@@ -32,7 +31,7 @@ export const ScoreBoard = (props) => {
 
         <section className='section-score-board'>
           <h4 className='h4-score-board'>Score Board:</h4>
-          <button className='btn'>Save Matchup</button>
+          <button className='btn btn-score-board'>Save Matchup</button>
         </section>
 
         <section className='section-team-score'>
