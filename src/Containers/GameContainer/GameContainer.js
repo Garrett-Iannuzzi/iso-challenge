@@ -93,6 +93,7 @@ export const GameContainer = (props) => {
 
             {displayLabel('Forward')}
             {getPlayersByPosition('F', 'teamOne', 4)}
+
         </section>
 
         <section className='section-team'>
@@ -112,6 +113,7 @@ export const GameContainer = (props) => {
 
             {displayLabel('Forward')}
             {getPlayersByPosition('F', 'teamTwo', 4)}
+
         </section>
       </div>
       <Link to='/score'>
