@@ -15,6 +15,20 @@ export const ScoreBoard = (props) => {
     return totalValue
   }
 
+  // const getWinner = () => {
+  //   const metrics = ['pts', 'ast', 'reb', 'blk', 'stl']
+  //   const teamOneTotal = statsInfoOne.reduce((total, statSheet) => {
+  //     metrics.forEach(metric => {
+  //       if(statSheet.data.includes(metric)) {
+  //         total += metric[metric]
+  //       }
+  //     })
+  //     console.log(total)
+  //     return total
+  //   }, 0)
+  //   return teamOneTotal
+  // }
+
   return(
     <div>
       <div className='div-score-board'>
@@ -27,7 +41,7 @@ export const ScoreBoard = (props) => {
           <p><b>Total Points:</b> {getMetric(statsInfoOne, 'pts')}</p>
           <p><b>Total Assists:</b> {getMetric(statsInfoOne, 'ast')}</p>
           <p><b>Total Rebounds:</b> {getMetric(statsInfoOne, 'reb')}</p>
-          <p><b>Total Blocks:</b> {getMetric(statsInfoOne, 'reb')}</p>
+          <p><b>Total Blocks:</b> {getMetric(statsInfoOne, 'blk')}</p>
           <p className='p-final'><b>Total Steals:</b>   {getMetric(statsInfoOne, 'stl')}</p>
         </section>
 
