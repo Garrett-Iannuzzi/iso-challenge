@@ -1,16 +1,22 @@
 .div-score-board {
   display: flex;
+  justify-content: center;
+}
+
+.div-name-skill {
+  border-bottom: solid 1px black;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 0;
 }
 
 .section-team-score {
   border: solid 2px black;
-  background-color: rgb(225, 207, 228);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 25em;
+  background-color: #e1cfe4;
+  height: 19em;
   margin: 3em;
-  width: 45%;
+  width: 20%;
 }
 
 .section-score-board {
@@ -22,21 +28,20 @@
 }
 
 .h2-score {
-  font-size: 2em;
+  font-size: 1.5em;
   color: white;
   text-align: center;
 }
 
 .h4-score {
   text-align: center;
-  font-size: 2.8em;
+  font-size: 2em;
   font-weight: bolder;
   margin: 0;
 }
 
 .h4-score-board {
   border-bottom: solid 1px black;
-  text-align: center;
   font-size: 1em;
   font-weight: bolder;
   margin: 0;
@@ -44,18 +49,34 @@
 }
 
 .btn-score-board {
+  margin: 0 auto;
+  display: block;
   border-bottom: solid 1px black;
+  margin-top: 100px;
+  width: 45%;
+}
+
+.h4-projected-winner {
+  font-size: .9em;
+  margin: 0;
+  padding: 10px;
 }
 
 .h5-skill {
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1em;
+  padding-top: 14px;
   margin: 0;
 }
 
 p {
   padding-left: 15px;
   font-size: 1em;
+}
+
+.p-final {
+  border-bottom: solid 1px black;
+  padding-bottom: 20px;
 }
 
 //styling for btn right now lives in NAV
