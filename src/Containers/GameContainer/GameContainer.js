@@ -77,8 +77,10 @@ export const GameContainer = (props) => {
     <>
       <div className='game-container'>
         <section className='section-team'>
-          <h2 className='team-name'>{getTeamMetric(1, 'teamOneName')}</h2>
-          <h4 className='h4-game'>{getTeamMetric(1, 'skillLevelOne')}</h4>
+          <div className='div-team-info'>
+            <h2 className='team-name'>{getTeamMetric(1, 'teamOneName')}</h2>
+            <h4 className='h4-game'>{getTeamMetric(1, 'skillLevelOne')}</h4>
+          </div>
             {displayLabel('Center')}
             {getPlayersByPosition('C', 'teamOne', 0)}
 
@@ -93,12 +95,13 @@ export const GameContainer = (props) => {
 
             {displayLabel('Forward')}
             {getPlayersByPosition('F', 'teamOne', 4)}
-
         </section>
 
         <section className='section-team'>
-          <h2 className='team-name'>{getTeamMetric(2, 'teamTwoName')}</h2>
-          <h4 className='h4-game'>{getTeamMetric(2, 'skillLevelTwo')}</h4>
+          <div className='div-team-info'>
+            <h2 className='team-name'>{getTeamMetric(2, 'teamTwoName')}</h2>
+            <h4 className='h4-game'>{getTeamMetric(2, 'skillLevelTwo')}</h4>
+          </div>
             {displayLabel('Center')}
             {getPlayersByPosition('C', 'teamTwo', 0)}
 
@@ -113,7 +116,6 @@ export const GameContainer = (props) => {
 
             {displayLabel('Forward')}
             {getPlayersByPosition('F', 'teamTwo', 4)}
-
         </section>
       </div>
       <Link to='/score'>
