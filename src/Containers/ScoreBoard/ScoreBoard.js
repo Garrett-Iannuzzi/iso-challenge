@@ -15,18 +15,21 @@ export const ScoreBoard = (props) => {
     return totalValue
   }
 
-  const getWinner = (statsInfoOne, statsInfoTwo) => {
+  const getWinnerTotal = () => {
     const metrics = ['pts', 'ast', 'reb', 'blk', 'stl'];
-    const totalPlayerOne = metrics.reduce((acc, cv) => {
-      acc += getMetric(statsInfoOne, cv);
-      return acc
+    const totalPlayerOne = metrics.reduce((total, metric) => {
+      total += getMetric(statsInfoOne, metric);
+      return total
     }, 0);
-    const totalPlayerTwo = metrics.reduce((acc, cv) => {
-      acc += getMetric(statsInfoTwo, cv);
-      return acc
+    const totalPlayerTwo = metrics.reduce((total, metric) => {
+      total += getMetric(statsInfoTwo, metric);
+      return total
     }, 0);
 
-    return (totalPlayerOne > totalPlayerTwo ? totalPlayerOne : totalPlayerTwo)
+    if(totalPlayerOne > totalPlayerTwo) {
+      return teamsInfo[0].teamOneName
+    } 
+    return teamsInfo[1].teamTwoName
   }
 
   return(
@@ -48,7 +51,7 @@ export const ScoreBoard = (props) => {
         <section className='section-score-board'>
           <h4 className='h4-score-board'>Score Board:</h4>
           <h4 className='h4-projected-winner'>Projected Winner:</h4>
-          <p className='winner-name'>{getWinner(statsInfoOne, statsInfoTwo)}</p>
+          <p className='winner-name'>{ getWinnerTotal() }</p>
           <button className='btn btn-score-board'>Save Matchup</button>
         </section>
 
