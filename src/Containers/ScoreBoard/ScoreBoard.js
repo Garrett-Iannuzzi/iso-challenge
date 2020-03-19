@@ -49,8 +49,7 @@ export const ScoreBoard = (props) => {
         </section>
 
         <section className='section-score-board'>
-          <h4 className='h4-score-board'>Score Board:</h4>
-          <h4 className='h4-projected-winner'>Projected Winner:</h4>
+          <h4 className='h4-score-board'>Winner:</h4>
           <p className='winner-name'>{ getWinnerTotal() }</p>
           <button className='btn btn-score-board'>Save Matchup</button>
         </section>

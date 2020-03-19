@@ -22,7 +22,6 @@
 .section-score-board {
   border: solid 4px black;
   background-color: rgb(225, 207, 228);
-  height: 15em;
   margin-top: 1em;
   width: 35%;
 }
@@ -42,7 +41,7 @@
 
 .h4-score-board {
   border-bottom: solid 1px black;
-  font-size: 1em;
+  font-size: 1.8em;
   font-weight: bolder;
   margin: 0;
   padding: 10px;
@@ -53,13 +52,7 @@
   display: block;
   border-bottom: solid 1px black;
   margin-top: 100px;
-  width: 45%;
-}
-
-.h4-projected-winner {
-  font-size: .9em;
-  margin: 0;
-  padding: 10px;
+  width: 75%;
 }
 
 .h5-skill {
@@ -77,6 +70,12 @@ p {
 .p-final {
   border-bottom: solid 1px black;
   padding-bottom: 20px;
+}
+
+.winner-name {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
 }
 
 //styling for btn right now lives in NAV
