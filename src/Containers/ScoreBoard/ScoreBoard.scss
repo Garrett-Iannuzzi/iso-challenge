@@ -22,7 +22,8 @@
 .section-score-board {
   border: solid 4px black;
   background-color: rgb(225, 207, 228);
-  height: 15em;
+  display: flex;
+  flex-direction: column;
   margin-top: 1em;
   width: 35%;
 }
@@ -31,6 +32,16 @@
   font-size: 1.5em;
   color: white;
   text-align: center;
+}
+
+.img-basketball {
+  height: 100px;
+  margin: auto;
+  width: 100px;
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
 }
 
 .h4-score {
@@ -42,7 +53,7 @@
 
 .h4-score-board {
   border-bottom: solid 1px black;
-  font-size: 1em;
+  font-size: 1.8em;
   font-weight: bolder;
   margin: 0;
   padding: 10px;
@@ -52,14 +63,9 @@
   margin: 0 auto;
   display: block;
   border-bottom: solid 1px black;
-  margin-top: 100px;
-  width: 45%;
-}
-
-.h4-projected-winner {
-  font-size: .9em;
-  margin: 0;
-  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  width: 75%;
 }
 
 .h5-skill {
@@ -77,6 +83,21 @@ p {
 .p-final {
   border-bottom: solid 1px black;
   padding-bottom: 20px;
+}
+
+.winner-name {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }
 
 //styling for btn right now lives in NAV
