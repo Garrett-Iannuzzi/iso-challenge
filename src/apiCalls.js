@@ -10,7 +10,7 @@ export const getPlayers = (pageNumber) => {
 }
 
 export const getNextPlayerPage = async (res, addMorePlayers) => {
-  if(res.meta.next_page < 10) {
+  if(res.meta.next_page < 25) {
     const getNextRes = await getPlayers(res.meta.next_page)
     addMorePlayers(getNextRes.data)
     getNextPlayerPage(getNextRes, addMorePlayers)
