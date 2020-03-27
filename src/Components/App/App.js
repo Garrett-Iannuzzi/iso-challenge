@@ -10,6 +10,7 @@ import Rules from '../../Components/Rules/Rules';
 import GameContainer from '../../Containers/GameContainer/GameContainer';
 import ScoreBoard from '../../Containers/ScoreBoard/ScoreBoard';
 import PropTypes from 'prop-types';
+import Loader from '../Loader/Loader';
 
 
 export class App extends Component {
@@ -43,27 +44,33 @@ export class App extends Component {
         <Route path='/game' render={() =>
           <main>
             <Nav />
-            <GameContainer />
+           { this.props.playerInfo.length ? <GameContainer /> : <Loader /> }
           </main>
           }
         />
         <Route path='/score' render={() =>
           <main>
             <Nav />
-            <ScoreBoard />
+            { this.props.statsInfoOne.length && this.props.statsInfoTwo.length ? <ScoreBoard /> : <Loader /> }
           </main>
           }
         />
       </body>
-    );
+    );  
   }
 }
+
+export const mapStateToProps = state => ({
+  playerInfo: state.playerInfo,
+  statsInfoOne: state.statsInfoOne,
+  statsInfoTwo: state.statsInfoTwo
+})
 
 export const mapDispatchToProps = dispatch => ({
   playerInfo: players => dispatch(getPlayerInfo(players)),
 })
 
-export default connect(null, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 
 App.propTypes = {
   playerInfo: PropTypes.func
