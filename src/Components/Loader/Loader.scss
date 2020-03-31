@@ -14,15 +14,28 @@
 .p-loader {
   display: flex;
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: bolder;
   justify-content: center;
   margin-top: 0em;
 }
 
 .img-loader {
+  animation-name: loader;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+  animation-duration: 3000ms;
   display: flex;
   height: 200px;
   margin: 0 auto;
   width: 200px;
+}
+
+@keyframes loader {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(-360deg);
+  }
 }
 
