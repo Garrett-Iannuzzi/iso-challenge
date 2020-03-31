@@ -4,9 +4,9 @@ import images from '../../images/images'
 
 const Loader = () => {
   return(
-    <div>
-      <p>Loading....</p>
-      <img src={images.loading} alt='Waiting to load' />
+    <div className='div-loader'>
+      <p className='p-loader'>Loading....</p>
+      <img className='img-loader' src={images.loading} alt='Waiting to load' />
     </div>
   )
 }

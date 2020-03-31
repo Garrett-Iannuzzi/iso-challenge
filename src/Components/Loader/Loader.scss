@@ -1,0 +1,28 @@
+.div-loader {
+  background-color: #e1cfe4;
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 4em;
+  opacity: .9;
+  width: 50%;
+}
+
+.p-loader {
+  display: flex;
+  font-size: 2.5em;
+  font-weight: bold;
+  justify-content: center;
+  margin-top: 0em;
+}
+
+.img-loader {
+  display: flex;
+  height: 200px;
+  margin: 0 auto;
+  width: 200px;
+}
+
