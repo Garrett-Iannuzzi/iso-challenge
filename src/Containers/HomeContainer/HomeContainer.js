@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 import { getTeamsInfo, isLoggedIn } from '../../actions/actions';
 import PropTypes from 'prop-types';
 import { 
-  Button, 
+  // Button, 
   DisclosureContent, 
   Box, 
   Tabbable, 
   Checkbox,
 } from "reakit";
-import { StartGame } from '../../stories/Button.stories'
+import { Button } from '../../Components/Elements/Button'
 
 export class HomeContainer extends Component {
   constructor(props) {
@@ -119,8 +119,8 @@ export class HomeContainer extends Component {
           </form>
         </div>
         <DisclosureContent className='btn-start' visible as='button' onClick={ () => this.handleStartError() }>Start The Game</DisclosureContent>
-        <Button className='btn-start' as='button' onClick={ () => this.handleStartError() }>Btn</Button>
-        {StartGame}
+        {/* <Button className='btn-start' as='button' onClick={ () => this.handleStartError() }>Btn</Button> */}
+        <Button btnInfo={{ name: 'Start The Game' }} />
       </Tabbable>
     )
   }
