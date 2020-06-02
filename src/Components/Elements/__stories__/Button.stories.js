@@ -1,5 +1,5 @@
 import React from 'react';
-// import { action } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 // import styled from '@emotion/styled/';
 
 import Button from '../Button'
@@ -9,10 +9,22 @@ export default {
   component: Button,
 };
 
-const btnData = { name: 'Btn Name Here' }
+const btnData = { 
+  name: 'Start The Game',
+}
 
-const btnDatas = { name: 'XXX' }
+const actionsData = {
+  fn: action('fn')
+}
 
-export const Start = () => <Button btnInfo={{ ...btnData }}/>
 
-export const GetStats = () => <Button btnInfo={{ ...btnDatas }}/>
+const btnDatas = { 
+  name: 'XXX',
+  fn: () => console.log('ClickedXXX')
+}
+
+
+
+export const Start = () => <Button btnInfo={{ ...btnData }} />
+
+export const GetStats = () => <Button btnInfo={{ ...btnDatas }} />
