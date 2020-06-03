@@ -4,6 +4,14 @@ import Error from '../../Components/Error/Error';
 import { connect } from 'react-redux';
 import { getTeamsInfo, isLoggedIn } from '../../actions/actions';
 import PropTypes from 'prop-types';
+import { 
+  // Button, 
+  DisclosureContent, 
+  Box, 
+  Tabbable, 
+  Checkbox,
+} from "reakit";
+import { Button } from '../../Components/Elements/Button'
 
 export class HomeContainer extends Component {
   constructor(props) {
@@ -27,13 +35,14 @@ export class HomeContainer extends Component {
   }
 
   submitTeams = () => {
-    const {teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
+    const { teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
     const teamOne = { teamOneName, skillLevelOne, players: [] };
     const teamTwo = { teamTwoName, skillLevelTwo, players: [] };
     this.props.teamInfo(teamOne, teamTwo)
   }
   
-  handleStartError = () => {
+  handleStartError = (e) => {
+    e.preventDefault()
     const {teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
     if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
       return this.props.isLoggedIn(false)
@@ -46,27 +55,33 @@ export class HomeContainer extends Component {
   
 
   render() {
+    const { teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
+
     if(this.props.login === false) {
       return(this.showError())
     }
+    
     return(
-      <>   
+      <Tabbable> 
         <div className='div-select-team'>
           <form>
             <label for='teamOneName'>Team 1 Name:</label>
             <input
               name='teamOneName'
               className='input-team-one'
-              value={this.state.teamOneName}
+              value={teamOneName}
               placeholder='Enter Team Name'
               type='text'
               maxLength='25'
               onChange={ (e) => this.handleChange(e) }
             />
+          <Checkbox as={Box}>
+            {teamOneName ? "😄" : "😞"}
+          </Checkbox>
             <label for='skillLevelOne'>Select Level:</label>
             <select
               id='skillLevelOne'
-              value={this.state.skillLevelOne}
+              value={skillLevelOne}
               name='skillLevelOne'
               className='select-skill-one'
               onChange={ (e) => this.handleChange(e) }
@@ -81,18 +96,21 @@ export class HomeContainer extends Component {
             <input
               name='teamTwoName'
               className='input-team-two'
-              value={this.state.teamTwoName}
+              value={teamTwoName}
               placeholder='Enter Team Name'
               type='text'
               maxLength='25'
               onChange={ (e) => this.handleChange(e) }
             />
+            <Checkbox as={Box}>
+              {teamTwoName ? "😄" : "😞"}
+            </Checkbox>
             <label for='skillLevelTwo'>Select Level:</label>
             <select
               id='skillLevelTwo'
-              value={this.state.skillLevelTwo}
+              value={skillLevelTwo}
               name='skillLevelTwo'
-              className='select-skill-two'
+              className='select-skill-two'         
               onChange={ (e) => this.handleChange(e) }
             >
               <option value='And-1'>And-1</option>
@@ -101,8 +119,12 @@ export class HomeContainer extends Component {
             </select>
           </form>
         </div>
-        <button className='btn-start' type='button' onClick={ () => this.handleStartError() }>Start The Game</button>
-      </>
+        <DisclosureContent className='btn-start' visible as='button' onClick={ (e) => this.handleStartError(e) }>Start The Game</DisclosureContent>
+        {/* <Button className='btn-start' as='button' onClick={ () => this.handleStartError() }>Btn</Button> */}
+        <Button 
+          btnInfo={{ name: 'Start The Game' }}
+        />
+      </Tabbable>
     )
   }
 }

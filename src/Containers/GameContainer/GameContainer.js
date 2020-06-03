@@ -16,7 +16,7 @@ export const GameContainer = (props) => {
   }
 
   const getPlayersByPosition = (position, team, index) => {
-    const filteredPlayers = playerInfo.filter(player => player.position === position || !player.position);
+    const filteredPlayers = playerInfo.filter(player => player.position === position);
     const filteredNames = filteredPlayers.reduce((fullName, currentPlayer) => {
       fullName.push(currentPlayer.last_name + ', ' + currentPlayer.first_name)
       return fullName.sort()
