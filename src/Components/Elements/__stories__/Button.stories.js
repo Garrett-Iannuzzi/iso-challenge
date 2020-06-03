@@ -13,17 +13,9 @@ const btnData = {
   name: 'Start The Game',
 }
 
-const actionsData = {
-  fn: action('fn')
-}
-
-
 const btnDatas = { 
   name: 'XXX',
-  fn: () => console.log('ClickedXXX')
 }
-
-
 
 export const Start = () => <Button btnInfo={{ ...btnData }} />
 

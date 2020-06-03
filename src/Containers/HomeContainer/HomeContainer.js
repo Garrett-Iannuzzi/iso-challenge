@@ -41,7 +41,8 @@ export class HomeContainer extends Component {
     this.props.teamInfo(teamOne, teamTwo)
   }
   
-  handleStartError = () => {
+  handleStartError = (e) => {
+    e.preventDefault()
     const {teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
     if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
       return this.props.isLoggedIn(false)
@@ -109,7 +110,7 @@ export class HomeContainer extends Component {
               id='skillLevelTwo'
               value={skillLevelTwo}
               name='skillLevelTwo'
-              className='select-skill-two'
+              className='select-skill-two'         
               onChange={ (e) => this.handleChange(e) }
             >
               <option value='And-1'>And-1</option>
@@ -118,11 +119,10 @@ export class HomeContainer extends Component {
             </select>
           </form>
         </div>
-        <DisclosureContent className='btn-start' visible as='button' onClick={ () => this.handleStartError() }>Start The Game</DisclosureContent>
+        <DisclosureContent className='btn-start' visible as='button' onClick={ (e) => this.handleStartError(e) }>Start The Game</DisclosureContent>
         {/* <Button className='btn-start' as='button' onClick={ () => this.handleStartError() }>Btn</Button> */}
         <Button 
           btnInfo={{ name: 'Start The Game' }}
-          onClick={ () => this.handleStartError() }
         />
       </Tabbable>
     )
