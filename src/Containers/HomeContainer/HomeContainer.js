@@ -117,9 +117,8 @@ export class HomeContainer extends Component {
             </select>
           </form>
         </div>
-        <DisclosureContent className='btn-start' visible as='button' onClick={ (e) => this.handleStartError(e) }>Start The Game</DisclosureContent>
         <Button 
-          btnInfo={{ name: 'Start The Game', fn: this.handleStartError }}
+          btnInfo={{ name: 'Start The Game', fn: this.handleStartError, className: 'btn-start' }}
         />
       </Tabbable>
     )

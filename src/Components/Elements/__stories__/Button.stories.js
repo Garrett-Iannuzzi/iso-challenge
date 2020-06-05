@@ -10,15 +10,16 @@ export default {
 
 const btnData = { 
   name: 'Start The Game',
-  fn: action('clicked me')
+  fn: action('clicked me'),
+  className: 'some-class-name'
 }
 
 const btnDatas = { 
   name: 'XXX',
-  fn: action('clicked meeee')
-
+  fn: action('clicked meeee'),
+  className: 'some-class-name'
 }
 
-export const Start = () => <Button btnInfo={{ ...btnData }} onClick={btnData.fn} />
+export const Start = () => <Button btnInfo={{ ...btnData }} onClick={btnData.fn} className={btnData.className} />
 
-export const GetStats = () => <Button btnInfo={{ ...btnDatas }} onClick={btnDatas.fn}/>
+export const GetStats = () => <Button btnInfo={{ ...btnDatas }} onClick={btnDatas.fn} className={btnDatas.className}/>
