@@ -6,6 +6,8 @@ import { getStatsInfoOne, getStatsInfoTwo } from '../../actions/actions';
 import { Link } from 'react-router-dom';
 import { getStats } from '../../apiCalls';
 import PropTypes from 'prop-types';
+import { Button } from '../../Components/Elements/Button'
+
 
 export const GameContainer = (props) => {
 
@@ -119,7 +121,7 @@ export const GameContainer = (props) => {
         </section>
       </div>
       <Link to='/score'>
-        <button className='btn-stats' onClick={ () => handleGetPlayerIds() }>Get Stats</button>
+        <Button btnInfo={{ name: 'Get Stats', fn: handleGetPlayerIds }} />
       </Link>
     </>
   )
