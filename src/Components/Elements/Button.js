@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-export const Button = ({ btnInfo:{ name } }) => {
+export const Button = ({ btnInfo:{ name, fn } }) => {
   return(
-    <button>{name}</button>
+    <button onClick={fn}>{name}</button>
   )
 }
 
