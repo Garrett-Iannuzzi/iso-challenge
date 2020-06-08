@@ -1,10 +1,11 @@
 import React from 'react';
+import styled from '@emotion/styled'
 import PropTypes from 'prop-types';
 
 
-export const Button = ({ btnInfo:{ name } }) => {
+export const Button = ({ btnInfo:{ name, fn, className } }) => {
   return(
-    <button>{name}</button>
+    <button className={className} onClick={fn}>{name}</button>
   )
 }
 

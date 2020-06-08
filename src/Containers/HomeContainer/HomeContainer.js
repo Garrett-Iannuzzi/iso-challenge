@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { getTeamsInfo, isLoggedIn } from '../../actions/actions';
 import PropTypes from 'prop-types';
 import { 
-  // Button, 
   DisclosureContent, 
   Box, 
   Tabbable, 
@@ -42,7 +41,6 @@ export class HomeContainer extends Component {
   }
   
   handleStartError = (e) => {
-    e.preventDefault()
     const {teamOneName, teamTwoName, skillLevelOne, skillLevelTwo } = this.state;
     if (teamOneName === '' || teamTwoName === '' || skillLevelOne === '' || skillLevelTwo === '') {
       return this.props.isLoggedIn(false)
@@ -76,7 +74,7 @@ export class HomeContainer extends Component {
               onChange={ (e) => this.handleChange(e) }
             />
           <Checkbox as={Box}>
-            {teamOneName ? "😄" : "😞"}
+            <span className='mo'>{teamOneName ? "😄" : "😞"}</span>
           </Checkbox>
             <label for='skillLevelOne'>Select Level:</label>
             <select
@@ -119,10 +117,8 @@ export class HomeContainer extends Component {
             </select>
           </form>
         </div>
-        <DisclosureContent className='btn-start' visible as='button' onClick={ (e) => this.handleStartError(e) }>Start The Game</DisclosureContent>
-        {/* <Button className='btn-start' as='button' onClick={ () => this.handleStartError() }>Btn</Button> */}
         <Button 
-          btnInfo={{ name: 'Start The Game' }}
+          btnInfo={{ name: 'Start The Game', fn: this.handleStartError, className: 'btn-start' }}
         />
       </Tabbable>
     )
