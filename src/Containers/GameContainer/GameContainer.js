@@ -121,7 +121,7 @@ export const GameContainer = (props) => {
         </section>
       </div>
       <Link to='/score'>
-        <Button btnInfo={{ name: 'Get Stats', fn: handleGetPlayerIds }} />
+        <Button btnInfo={{ name: 'Get Stats', fn: handleGetPlayerIds, className: 'btn-stats' }} />
       </Link>
     </>
   )
