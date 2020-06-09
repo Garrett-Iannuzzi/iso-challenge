@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { getTeamsInfo, isLoggedIn } from '../../actions/actions';
 import PropTypes from 'prop-types';
 import { 
-  DisclosureContent, 
   Box, 
   Tabbable, 
   Checkbox,
