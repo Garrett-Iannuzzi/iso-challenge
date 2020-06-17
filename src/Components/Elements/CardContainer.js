@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 
 export const CardContainer = ({ info: { className } }) => {
   return(
-    <section className={className}>
-
-    </section>
+    <section className={className} />
   )
 }
 

@@ -6,7 +6,8 @@ import { getStatsInfoOne, getStatsInfoTwo } from '../../actions/actions';
 import { Link } from 'react-router-dom';
 import { getStats } from '../../apiCalls';
 import PropTypes from 'prop-types';
-import { Button } from '../../Components/Elements/Button'
+import { Button } from '../../Components/Elements/Button';
+import { CardContainer } from '../../Components/Elements/CardContainer';
 
 
 export const GameContainer = (props) => {

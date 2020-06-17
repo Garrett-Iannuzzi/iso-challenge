@@ -11,4 +11,4 @@ const cardContainerData = {
   className: 'some-class-name'
 }
 
-export const CardContainer = () => <CardContainer info={{ ...cardContainerData }} />
+export const CardContainerGame = () => <CardContainer info={{ ...cardContainerData }}></CardContainer>
