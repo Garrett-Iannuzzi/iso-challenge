@@ -9,9 +9,7 @@ import PropTypes from 'prop-types';
 import { Button } from '../../Components/Elements/Button';
 
 
-export const GameContainer = (props) => {
-
-  const { playerInfo, teamInfo, statsInfoOne, statsInfoTwo } = props;
+export const GameContainer = ({ playerInfo, teamInfo, statsInfoOne, statsInfoTwo }) => {
 
   const displayLabel = (position) => {
     return( <label className='game-label'>{position}:</label> )
@@ -75,50 +73,36 @@ export const GameContainer = (props) => {
     })
   }
 
+  const createTeamOneBox = (team, teamName, teamSkillLevel, index) => {
+    return(
+      <section className='section-team'>
+      <div className='div-team-info'>
+        <h2 className='team-name'>{getTeamMetric(index, teamName)}</h2>
+        <h4 className='h4-game'>{getTeamMetric(index, teamSkillLevel)}</h4>
+      </div>
+        {displayLabel('Center')}
+        {getPlayersByPosition('C', team, 0)}
+
+        {displayLabel('Guard')}
+        {getPlayersByPosition('G', team, 1)}
+
+        {displayLabel('Guard')}
+        {getPlayersByPosition('G', team, 2)}
+
+        {displayLabel('Forward')}
+        {getPlayersByPosition('F', team, 3)}
+
+        {displayLabel('Forward')}
+        {getPlayersByPosition('F', team, 4)}
+    </section>
+    )
+  }
+
   return(
     <>
       <div className='game-container'>
-        <section className='section-team'>
-          <div className='div-team-info'>
-            <h2 className='team-name'>{getTeamMetric(1, 'teamOneName')}</h2>
-            <h4 className='h4-game'>{getTeamMetric(1, 'skillLevelOne')}</h4>
-          </div>
-            {displayLabel('Center')}
-            {getPlayersByPosition('C', 'teamOne', 0)}
-
-            {displayLabel('Guard')}
-            {getPlayersByPosition('G', 'teamOne', 1)}
-
-            {displayLabel('Guard')}
-            {getPlayersByPosition('G', 'teamOne', 2)}
-
-            {displayLabel('Forward')}
-            {getPlayersByPosition('F', 'teamOne', 3)}
-
-            {displayLabel('Forward')}
-            {getPlayersByPosition('F', 'teamOne', 4)}
-        </section>
-
-        <section className='section-team'>
-          <div className='div-team-info'>
-            <h2 className='team-name'>{getTeamMetric(2, 'teamTwoName')}</h2>
-            <h4 className='h4-game'>{getTeamMetric(2, 'skillLevelTwo')}</h4>
-          </div>
-            {displayLabel('Center')}
-            {getPlayersByPosition('C', 'teamTwo', 0)}
-
-            {displayLabel('Guard')}
-            {getPlayersByPosition('G', 'teamTwo', 1)}
-
-            {displayLabel('Guard')}
-            {getPlayersByPosition('G', 'teamTwo', 2)}
-
-            {displayLabel('Forward')}
-            {getPlayersByPosition('F', 'teamTwo', 3)}
-
-            {displayLabel('Forward')}
-            {getPlayersByPosition('F', 'teamTwo', 4)}
-        </section>
+      {createTeamOneBox('teamOne', 'teamOneName', 'skillLevelOne', 1)}
+      {createTeamOneBox('teamTwo', 'teamTwoName', 'skillLevelTwo', 2)}
       </div>
       {(teamInfo[0].players.length && teamInfo[1].players.length === 5) ? 
           <Link to='/score'>
