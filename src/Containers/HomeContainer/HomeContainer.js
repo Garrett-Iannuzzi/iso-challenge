@@ -59,7 +59,7 @@ export class HomeContainer extends Component {
     }
     
     return(
-      <Tabbable> 
+      <> 
         <div className='div-select-team'>
           <form>
             <label for='teamOneName'>Team 1 Name:</label>
@@ -72,9 +72,6 @@ export class HomeContainer extends Component {
               maxLength='25'
               onChange={ (e) => this.handleChange(e) }
             />
-          <Checkbox as={Box}>
-            <span className='mo'>{teamOneName ? "😄" : "😞"}</span>
-          </Checkbox>
             <label for='skillLevelOne'>Select Level:</label>
             <select
               id='skillLevelOne'
@@ -99,9 +96,6 @@ export class HomeContainer extends Component {
               maxLength='25'
               onChange={ (e) => this.handleChange(e) }
             />
-            <Checkbox as={Box}>
-              {teamTwoName ? "😄" : "😞"}
-            </Checkbox>
             <label for='skillLevelTwo'>Select Level:</label>
             <select
               id='skillLevelTwo'
@@ -119,7 +113,7 @@ export class HomeContainer extends Component {
         <Button 
           btnInfo={{ name: 'Start The Game', fn: this.handleStartError, className: 'btn-start' }}
         />
-      </Tabbable>
+      </>
     )
   }
 }
