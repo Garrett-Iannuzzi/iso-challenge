@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { getStats } from '../../apiCalls';
 import PropTypes from 'prop-types';
 import { Button } from '../../Components/Elements/Button';
-import { CardContainer } from '../../Components/Elements/CardContainer';
 
 
 export const GameContainer = (props) => {
@@ -121,9 +120,13 @@ export const GameContainer = (props) => {
             {getPlayersByPosition('F', 'teamTwo', 4)}
         </section>
       </div>
-      <Link to='/score'>
-        <Button btnInfo={{ name: 'Get Stats', fn: handleGetPlayerIds, className: 'btn-stats' }} />
-      </Link>
+      {(teamInfo[0].players.length && teamInfo[1].players.length === 5) ? 
+          <Link to='/score'>
+            <Button btnInfo={{ name: 'Get Stats', fn: handleGetPlayerIds, className: 'btn-stats' }} />
+          </Link>
+        :
+        <div className='p-select-player'>Select 5 Players Each</div>
+      }
     </>
   )
 }
