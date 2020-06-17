@@ -7,7 +7,7 @@ form {
   justify-content: space-evenly;
   height: 25em;
   margin: 3em;
-  width: 45%;
+  width: 30%;
   &:hover {
     opacity: 1;
     border-color: white;
@@ -38,6 +38,7 @@ select {
 
 .div-select-team {
   display: flex;
+  justify-content: center;
 }
 
 .btn-start {
@@ -53,4 +54,3 @@ select {
     color: white;
   }
 }
-
