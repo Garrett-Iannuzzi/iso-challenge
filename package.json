@@ -1,4 +1,5 @@
 {
+  "homepage": "https://iso-challenge.netlify.app/",
   "name": "iso-challenge",
   "version": "0.1.0",
   "private": true,
@@ -24,6 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --verbose",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
