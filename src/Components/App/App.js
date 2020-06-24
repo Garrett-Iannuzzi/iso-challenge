@@ -31,6 +31,7 @@ export class App extends Component {
   }
 
   render() {
+    const { playerInfo, statsInfoOne, statsInfoTwo } = this.props
     this.state.pageCount++
 
     return ( 
@@ -39,8 +40,8 @@ export class App extends Component {
           <Nav />
           <Route exact path='/' render={({ history }) => this.state.pageCount === 30 ? <HomeContainer history={ history } /> : <Loader />} />
           <Route path='/rules' render={() => <Rules />} />
-          <Route path='/game' render={() => this.props.playerInfo.length ? <GameContainer /> : <Loader />} />
-          <Route path='/score' render={() => this.props.statsInfoOne.length && this.props.statsInfoTwo.length ? <ScoreBoard /> : <Loader /> } />
+          <Route path='/game' render={() => playerInfo.length ? <GameContainer /> : <Loader />} />
+          <Route path='/score' render={() => statsInfoOne.length && statsInfoTwo.length ? <ScoreBoard /> : <Loader /> } />
         </main>
       </body>
     );  
