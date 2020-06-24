@@ -32,38 +32,16 @@ export class App extends Component {
 
   render() {
     this.state.pageCount++
-    
+
     return ( 
       <body>
-        <Route exact path='/' render={({ history }) => 
-          <main>
-            <Nav />
-            {/* {console.log(this.state.pageCount)} */}
-            {this.state.pageCount === 30 ? <HomeContainer history={ history } /> : <Loader />}
-          </main>
-          }
-          />
-        <Route path='/rules' render={() =>
-          <main>
-            <Nav />
-            <Rules />
-          </main>
-          }
-        />
-        <Route path='/game' render={() =>
-          <main>
-            <Nav />
-            {this.props.playerInfo.length ? <GameContainer /> : <Loader />}
-          </main>
-          }
-        />
-        <Route path='/score' render={() =>
-          <main>
-            <Nav />
-            {this.props.statsInfoOne.length && this.props.statsInfoTwo.length ? <ScoreBoard /> : <Loader />}
-          </main>
-          }
-        />
+        <main>
+          <Nav />
+          <Route exact path='/' render={({ history }) => this.state.pageCount === 30 ? <HomeContainer history={ history } /> : <Loader />} />
+          <Route path='/rules' render={() => <Rules />} />
+          <Route path='/game' render={() => this.props.playerInfo.length ? <GameContainer /> : <Loader />} />
+          <Route path='/score' render={() => this.props.statsInfoOne.length && this.props.statsInfoTwo.length ? <ScoreBoard /> : <Loader /> } />
+        </main>
       </body>
     );  
   }
