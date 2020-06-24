@@ -1,5 +1,5 @@
 .section-error {
-  border: solid 4px black;
+  border: solid 3px black;
   background-color:rgb(225, 207, 228);
   height: 15em;
   margin: 0 auto;
@@ -21,12 +21,14 @@ h3 {
 }
 
 .button-error {
+  border: solid 1px;
   font-size: .8em;
-  width: 35%;
   font-weight: bolder;
   height: 35px;
   border-radius: 5px;
   margin-top: 30px;
+  outline: none;
+  width: 35%;
   &:hover {
     cursor: pointer;
     border: solid 2px black;
