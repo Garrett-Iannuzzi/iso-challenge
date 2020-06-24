@@ -101,12 +101,9 @@ export const GameContainer = ({ playerInfo, teamInfo, statsInfoOne, statsInfoTwo
   return(
     <>
       <div className='game-container'>
-
       {createTeamOneBox('teamOne', 'teamOneName', 'skillLevelOne', 1)}
       {createTeamOneBox('teamTwo', 'teamTwoName', 'skillLevelTwo', 2)}
-
       </div>
-
       {
         (teamInfo[0].players.length && teamInfo[1].players.length === 5) ? 
           <Link to='/score'>

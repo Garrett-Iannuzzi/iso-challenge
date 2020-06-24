@@ -14,6 +14,12 @@ import Loader from '../Loader/Loader';
 
 
 export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      pageCount: 0
+    }
+  }
 
   async componentDidMount() {
     await getPlayers(1)
@@ -25,36 +31,18 @@ export class App extends Component {
   }
 
   render() {
+    const { playerInfo, statsInfoOne, statsInfoTwo } = this.props
+    this.state.pageCount++
+
     return ( 
       <body>
-        <Route exact path='/' render={({ history }) => 
-          <main>
-            <Nav />
-            <HomeContainer history={ history } />
-          </main>
-          }
-          />
-        <Route path='/rules' render={() =>
-          <main>
-            <Nav />
-            <Rules />
-          </main>
-          }
-        />
-        <Route path='/game' render={() =>
-          <main>
-            <Nav />
-           { this.props.playerInfo.length ? <GameContainer /> : <Loader /> }
-          </main>
-          }
-        />
-        <Route path='/score' render={() =>
-          <main>
-            <Nav />
-            { this.props.statsInfoOne.length && this.props.statsInfoTwo.length ? <ScoreBoard /> : <Loader /> }
-          </main>
-          }
-        />
+        <main>
+          <Nav />
+          <Route exact path='/' render={({ history }) => this.state.pageCount === 30 ? <HomeContainer history={ history } /> : <Loader />} />
+          <Route path='/rules' render={() => <Rules />} />
+          <Route path='/game' render={() => playerInfo.length ? <GameContainer /> : <Loader />} />
+          <Route path='/score' render={() => statsInfoOne.length && statsInfoTwo.length ? <ScoreBoard /> : <Loader /> } />
+        </main>
       </body>
     );  
   }

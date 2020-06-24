@@ -22,6 +22,7 @@ export class PlayerSelect extends Component {
   render() {
     return(
       <select value={this.state.selectedPlayer} onChange={ (e) => this.handleChange(e) }>
+        <option>Select:</option>
         {this.props.players}
       </select>
     )
