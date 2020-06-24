@@ -14,6 +14,12 @@ import Loader from '../Loader/Loader';
 
 
 export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      pageCount: 0
+    }
+  }
 
   async componentDidMount() {
     await getPlayers(1)
@@ -25,12 +31,15 @@ export class App extends Component {
   }
 
   render() {
+    this.state.pageCount++
+    
     return ( 
       <body>
         <Route exact path='/' render={({ history }) => 
           <main>
             <Nav />
-            <HomeContainer history={ history } />
+            {/* {console.log(this.state.pageCount)} */}
+            {this.state.pageCount === 30 ? <HomeContainer history={ history } /> : <Loader />}
           </main>
           }
           />
@@ -44,14 +53,14 @@ export class App extends Component {
         <Route path='/game' render={() =>
           <main>
             <Nav />
-           { this.props.playerInfo.length ? <GameContainer /> : <Loader /> }
+            {this.props.playerInfo.length ? <GameContainer /> : <Loader />}
           </main>
           }
         />
         <Route path='/score' render={() =>
           <main>
             <Nav />
-            { this.props.statsInfoOne.length && this.props.statsInfoTwo.length ? <ScoreBoard /> : <Loader /> }
+            {this.props.statsInfoOne.length && this.props.statsInfoTwo.length ? <ScoreBoard /> : <Loader />}
           </main>
           }
         />
