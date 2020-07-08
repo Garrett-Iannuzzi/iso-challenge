@@ -64,3 +64,18 @@
   font-size: 2em;
   justify-content: center;
 }
+
+.img-game-container {
+  margin: 1.5em;
+  height: 250px;
+  width: 220px;
+}
+
+.div-selects {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-selects-wrap {
+  display: flex;
+}
