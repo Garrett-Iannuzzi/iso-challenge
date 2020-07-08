@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { getStats } from '../../apiCalls';
 import PropTypes from 'prop-types';
 import { Button } from '../../Components/Elements/Button';
+import images from '../../images/images';
 
 
 export const GameContainer = ({ playerInfo, teamInfo, statsInfoOne, statsInfoTwo }) => {
@@ -94,7 +95,18 @@ export const GameContainer = ({ playerInfo, teamInfo, statsInfoOne, statsInfoTwo
 
         {displayLabel('Forward')}
         {getPlayersByPosition('F', team, 4)}
+        {getRandomImg()}
     </section>
+    )
+  }
+
+  const getRandomImg = () => {
+    const randomNum = Math.floor(Math.random() * Math.floor(7));
+    // const index = images.funnyImgs[randomNum]
+    // const img = images.funnyImgs.find(img => img)
+    // return console.log(randomNum, index)
+    return(
+      <img src={images.funnyImgs[randomNum]} />
     )
   }
 
