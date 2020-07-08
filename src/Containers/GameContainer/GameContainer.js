@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { getStats } from '../../apiCalls';
 import PropTypes from 'prop-types';
 import { Button } from '../../Components/Elements/Button';
+import images from '../../images/images';
 
 
 export const GameContainer = ({ playerInfo, teamInfo, statsInfoOne, statsInfoTwo }) => {
@@ -80,21 +81,33 @@ export const GameContainer = ({ playerInfo, teamInfo, statsInfoOne, statsInfoTwo
         <h2 className='team-name'>{getTeamMetric(index, teamName)}</h2>
         <h4 className='h4-game'>{getTeamMetric(index, teamSkillLevel)}</h4>
       </div>
-        {displayLabel('Center')}
-        {getPlayersByPosition('C', team, 0)}
+      <div className='div-selects-wrap'>
+        <div className='div-selects'>
+          {displayLabel('Center')}
+          {getPlayersByPosition('C', team, 0)}
 
-        {displayLabel('Guard')}
-        {getPlayersByPosition('G', team, 1)}
+          {displayLabel('Guard')}
+          {getPlayersByPosition('G', team, 1)}
 
-        {displayLabel('Guard')}
-        {getPlayersByPosition('G', team, 2)}
+          {displayLabel('Guard')}
+          {getPlayersByPosition('G', team, 2)}
 
-        {displayLabel('Forward')}
-        {getPlayersByPosition('F', team, 3)}
+          {displayLabel('Forward')}
+          {getPlayersByPosition('F', team, 3)}
 
-        {displayLabel('Forward')}
-        {getPlayersByPosition('F', team, 4)}
+          {displayLabel('Forward')}
+          {getPlayersByPosition('F', team, 4)}
+        </div>
+        {getRandomImg()}
+      </div>
     </section>
+    )
+  }
+
+  const getRandomImg = () => {
+    const randomNum = Math.floor(Math.random() * Math.floor(7));
+    return(
+      <img className='img-game-container' src={images.funnyImgs[randomNum]} />
     )
   }
 

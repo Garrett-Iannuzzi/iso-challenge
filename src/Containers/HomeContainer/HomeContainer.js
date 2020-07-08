@@ -77,7 +77,7 @@ export class HomeContainer extends Component {
               id='skillLevelOne'
               value={skillLevelOne}
               name='skillLevelOne'
-              className='select-skill-one'
+              className='select-skill'
               onChange={ (e) => this.handleChange(e) }
             >
               <option value='And-1'>And-1</option>
@@ -101,7 +101,7 @@ export class HomeContainer extends Component {
               id='skillLevelTwo'
               value={skillLevelTwo}
               name='skillLevelTwo'
-              className='select-skill-two'         
+              className='select-skill'         
               onChange={ (e) => this.handleChange(e) }
             >
               <option value='And-1'>And-1</option>
